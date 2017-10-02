@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Autos4Sale.Web.Models;
+using Autos4Sale.Data;
+using Autos4Sale.Data.Models;
 
 namespace Autos4Sale.Web
 {

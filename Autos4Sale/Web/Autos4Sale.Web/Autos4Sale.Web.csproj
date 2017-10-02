@@ -196,7 +196,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -261,6 +260,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Autos4Sale.Data.Models\Autos4Sale.Data.Models.csproj">
+      <Project>{280798CB-7923-404F-90BB-E890B732D781}</Project>
+      <Name>Autos4Sale.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Autos4Sale.Data\Autos4Sale.Data.csproj">
+      <Project>{F1307AEF-8D8C-44F1-9249-CEA6E6B7D4A2}</Project>
+      <Name>Autos4Sale.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Autos4Sale.Web.Models;
+using Autos4Sale.Data.Models;
+using Autos4Sale.Data;
 
 namespace Autos4Sale.Web
 {

@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Autos4Sale.Web.Models;
+using Autos4Sale.Data.Models;
 
 namespace Autos4Sale.Web.Controllers
 {

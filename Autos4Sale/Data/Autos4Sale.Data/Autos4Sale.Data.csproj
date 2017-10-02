@@ -54,11 +54,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto4SaleDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autos4Sale.Data.Models\Autos4Sale.Data.Models.csproj">
+      <Project>{280798CB-7923-404F-90BB-E890B732D781}</Project>
+      <Name>Autos4Sale.Data.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
