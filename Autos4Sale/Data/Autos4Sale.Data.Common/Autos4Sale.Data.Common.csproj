@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1307AEF-8D8C-44F1-9249-CEA6E6B7D4A2}</ProjectGuid>
+    <ProjectGuid>{DD14861B-3508-4015-832E-2E0002B9B16F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Autos4Sale.Data</RootNamespace>
-    <AssemblyName>Autos4Sale.Data</AssemblyName>
+    <RootNamespace>Autos4Sale.Data.Common</RootNamespace>
+    <AssemblyName>Autos4Sale.Data.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,12 +36,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,35 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autos4SaleDbContext.cs" />
-    <Compile Include="Migrations\201710021733260_init.cs" />
-    <Compile Include="Migrations\201710021733260_init.Designer.cs">
-      <DependentUpon>201710021733260_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710021735191_new models added.cs" />
-    <Compile Include="Migrations\201710021735191_new models added.Designer.cs">
-      <DependentUpon>201710021735191_new models added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Contracts\IEfRepository.cs" />
+    <Compile Include="Contracts\IEfUnitOfWork.cs" />
+    <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Compile Include="Repositories\EfRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Autos4Sale.Data.Models\Autos4Sale.Data.Models.csproj">
       <Project>{280798CB-7923-404F-90BB-E890B732D781}</Project>
       <Name>Autos4Sale.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Autos4Sale.Data\Autos4Sale.Data.csproj">
+      <Project>{f1307aef-8d8c-44f1-9249-cea6e6b7d4a2}</Project>
+      <Name>Autos4Sale.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710021733260_init.resx">
-      <DependentUpon>201710021733260_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710021735191_new models added.resx">
-      <DependentUpon>201710021735191_new models added.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

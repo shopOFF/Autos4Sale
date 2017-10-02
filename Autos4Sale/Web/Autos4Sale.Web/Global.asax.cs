@@ -15,7 +15,7 @@ namespace Autos4Sale.Web
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Auto4SaleDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Autos4SaleDbContext, Configuration>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
