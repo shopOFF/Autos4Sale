@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Autos4Sale.Data.Models.Abstracts;
+using Autos4Sale.Data.Models.Enums;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Autos4Sale.Data.Models
 {
-    public class CarOffer
+    public class CarOffer : DataModel
     {
         private ICollection<Image> image;
 
@@ -15,17 +15,33 @@ namespace Autos4Sale.Data.Models
             this.image = new HashSet<Image>();
         }
 
-        public int Id { get; set; }
-
-        public virtual User User { get; set; }
+        public virtual User Author { get; set; }
 
         public string Make { get; set; }
 
         public string Model { get; set; }
 
+        public int YearManufacured { get; set; }
+
+        public TransmissionType Transmission { get; set; }
+
+        public EngineType Engine { get; set; }
+
+        public CarCategoryType CarCategory { get; set; }
+
+        public int Mileage { get; set; }
+
+        public int HorsePower { get; set; }
+
         public string Description { get; set; }
 
-        public DateTime DatePosted { get; set; }
+        public int Price { get; set; }
+
+        public string SellersCurrentPhone { get; set; }
+
+        public ColorType Color { get; set; }
+
+        public string Location { get; set; }
 
         public virtual ICollection<Image> Image
         {

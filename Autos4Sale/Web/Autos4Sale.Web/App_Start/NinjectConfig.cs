@@ -1,5 +1,5 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Autos4Sale.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Autos4Sale.Web.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Autos4Sale.Web.App_Start.NinjectConfig), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Autos4Sale.Web.App_Start.NinjectConfig), "Stop")]
 
 namespace Autos4Sale.Web.App_Start
 {
@@ -16,7 +16,7 @@ namespace Autos4Sale.Web.App_Start
     using System.Data.Entity;
     using Autos4Sale.Data;
 
-    public static class NinjectWebCommon 
+    public static class NinjectConfig 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
