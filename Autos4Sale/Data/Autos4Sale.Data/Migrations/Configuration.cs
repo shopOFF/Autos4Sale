@@ -19,26 +19,26 @@ namespace Autos4Sale.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(Autos4SaleDbContext context)
+        protected override void Seed(Autos4SaleDbContext dbContext)
         {
-            this.SeedUsers(context);
-            this.SeedSampleData(context);
+            this.SeedUsers(dbContext);
+            this.SeedSampleData(dbContext);
 
-            base.Seed(context);
+            base.Seed(dbContext);
         }
 
-        private void SeedUsers(Autos4SaleDbContext context)
+        private void SeedUsers(Autos4SaleDbContext dbContext)
         {
-            if (!context.Roles.Any())
+            if (!dbContext.Roles.Any())
             {
                 var roleName = "Admin";
 
-                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleStore = new RoleStore<IdentityRole>(dbContext);
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
                 var role = new IdentityRole { Name = roleName };
                 roleManager.Create(role);
 
-                var userStore = new UserStore<User>(context);
+                var userStore = new UserStore<User>(dbContext);
                 var userManager = new UserManager<User>(userStore);
                 var user = new User
                 {
@@ -53,10 +53,10 @@ namespace Autos4Sale.Data.Migrations
             }
         }
 
-        private void SeedSampleData(Autos4SaleDbContext context)
+        private void SeedSampleData(Autos4SaleDbContext dbContext)
         {
             // TODO: Get sample data for a model
-            //if (!context.Posts.Any())
+            //if (!dbContext.Posts.Any())
             //{
             //    for (int i = 0; i < 5; i++)
             //    {
@@ -64,11 +64,11 @@ namespace Autos4Sale.Data.Migrations
             //        {
             //            Title = "Post " + i,
             //            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lobortis nibh. Nullam bibendum, tortor quis porttitor fringilla, eros risus consequat orci, at scelerisque mauris dolor sit amet nulla. Vivamus turpis lorem, pellentesque eget enim ut, semper faucibus tortor. Aenean malesuada laoreet lorem.",
-            //            Author = context.Users.First(x => x.Email == AdministratorUserName),
+            //            Author = dbContext.Users.First(x => x.Email == AdministratorUserName),
             //            CreatedOn = DateTime.Now
             //        };
 
-            //        context.Posts.Add(post);
+            //        dbContext.Posts.Add(post);
             //    }
             //}
         }
