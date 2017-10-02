@@ -21,7 +21,7 @@ namespace Autos4Sale.Web.Models
     public class Auto4SaleDbContext : IdentityDbContext<User>
     {
         public Auto4SaleDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Autos4SaleDB", throwIfV1Schema: false)
         {
         }
 
