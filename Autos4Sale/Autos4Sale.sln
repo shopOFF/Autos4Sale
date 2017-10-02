@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{22F1B1DD-9A06-483A-89DA-F5DF2F3F83A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos4Sale.Web", "Autos4Sale.Web\Autos4Sale.Web.csproj", "{A4EF7763-30F2-4787-B7A6-1558E7907360}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos4Sale.Web", "Web\Autos4Sale.Web\Autos4Sale.Web.csproj", "{8BC9CFA5-C522-4249-81B8-5E1A86FD14B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A4EF7763-30F2-4787-B7A6-1558E7907360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4EF7763-30F2-4787-B7A6-1558E7907360}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4EF7763-30F2-4787-B7A6-1558E7907360}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4EF7763-30F2-4787-B7A6-1558E7907360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC9CFA5-C522-4249-81B8-5E1A86FD14B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC9CFA5-C522-4249-81B8-5E1A86FD14B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC9CFA5-C522-4249-81B8-5E1A86FD14B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC9CFA5-C522-4249-81B8-5E1A86FD14B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A4EF7763-30F2-4787-B7A6-1558E7907360} = {22F1B1DD-9A06-483A-89DA-F5DF2F3F83A8}
+		{8BC9CFA5-C522-4249-81B8-5E1A86FD14B9} = {22F1B1DD-9A06-483A-89DA-F5DF2F3F83A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5171F164-B722-4CA9-90F3-A8DFAC578E77}
