@@ -57,6 +57,10 @@
     <Compile Include="CarOffer.cs" />
     <Compile Include="Contracts\IAuditable.cs" />
     <Compile Include="Contracts\IDeletable.cs" />
+    <Compile Include="Enums\CarCategoryType.cs" />
+    <Compile Include="Enums\ColorType.cs" />
+    <Compile Include="Enums\EngineType.cs" />
+    <Compile Include="Enums\TransmissionType.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
