@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201710040903495_initial.Designer.cs">
       <DependentUpon>201710040903495_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710040936356_make renamed to brand.cs" />
+    <Compile Include="Migrations\201710040936356_make renamed to brand.Designer.cs">
+      <DependentUpon>201710040936356_make renamed to brand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710040903495_initial.resx">
       <DependentUpon>201710040903495_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710040936356_make renamed to brand.resx">
+      <DependentUpon>201710040936356_make renamed to brand.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

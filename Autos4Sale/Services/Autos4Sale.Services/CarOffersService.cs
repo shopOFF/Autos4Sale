@@ -19,7 +19,7 @@ namespace Autos4Sale.Services
 
         public IQueryable<CarOffer> GetAll()
         {
-            return this.carOffersRepo.All;
+            return this.carOffersRepo.GetAll;
         }
     }
 }

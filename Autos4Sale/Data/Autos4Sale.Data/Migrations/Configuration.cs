@@ -1,6 +1,7 @@
 namespace Autos4Sale.Data.Migrations
 {
     using Autos4Sale.Data.Models;
+    using Autos4Sale.Data.Models.Enums;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
@@ -55,22 +56,33 @@ namespace Autos4Sale.Data.Migrations
 
         private void SeedSampleData(Autos4SaleDbContext dbContext)
         {
-            // TODO: Get sample data for a model
-            //if (!dbContext.Posts.Any())
-            //{
-            //    for (int i = 0; i < 5; i++)
-            //    {
-            //        var post = new Post()
-            //        {
-            //            Title = "Post " + i,
-            //            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lobortis nibh. Nullam bibendum, tortor quis porttitor fringilla, eros risus consequat orci, at scelerisque mauris dolor sit amet nulla. Vivamus turpis lorem, pellentesque eget enim ut, semper faucibus tortor. Aenean malesuada laoreet lorem.",
-            //            Author = dbContext.Users.First(x => x.Email == AdministratorUserName),
-            //            CreatedOn = DateTime.Now
-            //        };
+            if (!dbContext.CarOffers.Any())
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    var carOffer = new CarOffer()
+                    {
+                        // TODO: Image property must be set up
+                        Brand = $"RandomBrand-{i}",
+                        Model = $"Proto-Type-{i}",
+                        Author = dbContext.Users.First(x => x.Email == AdministratorUserName),
+                        CreatedOn = DateTime.Now,
+                        Color = (ColorType)i,
+                        Engine = (EngineType)i,
+                        Transmission = TransmissionType.Manual,
+                        CarCategory = (CarCategoryType)i,
+                        YearManufacured = 2000 + i,
+                        Mileage = 20000 + i,
+                        HorsePower = 111 + i,
+                        SellersCurrentPhone = "+0899101010",
+                        Location = "Sofia, Mladost 1A",
+                        Price = 1000 + i,
+                        Description = "Perfektna, karana ot 93 godi6na baba, samo do magazina!"
+                    };
 
-            //        dbContext.Posts.Add(post);
-            //    }
-            //}
+                    dbContext.CarOffers.Add(carOffer);
+                }
+            }
         }
     }
 }

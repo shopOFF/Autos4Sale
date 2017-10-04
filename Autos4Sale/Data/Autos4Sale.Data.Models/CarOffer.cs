@@ -17,7 +17,7 @@ namespace Autos4Sale.Data.Models
 
         public virtual User Author { get; set; }
 
-        public string Make { get; set; }
+        public string Brand { get; set; }
 
         public string Model { get; set; }
 
