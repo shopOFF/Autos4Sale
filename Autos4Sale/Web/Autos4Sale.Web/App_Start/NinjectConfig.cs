@@ -15,6 +15,7 @@ namespace Autos4Sale.Web.App_Start
     using Autos4Sale.Data.Common.Repositories;
     using System.Data.Entity;
     using Autos4Sale.Data;
+    using Autos4Sale.Services.Contracts;
 
     public static class NinjectConfig 
     {
@@ -69,6 +70,13 @@ namespace Autos4Sale.Web.App_Start
             kernel.Bind(x =>
             {
                 x.FromThisAssembly()
+                 .SelectAllClasses()
+                 .BindDefaultInterface();
+            });
+
+            kernel.Bind(x =>
+            {
+                x.FromAssemblyContaining(typeof(IService))
                  .SelectAllClasses()
                  .BindDefaultInterface();
             });

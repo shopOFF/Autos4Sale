@@ -1,6 +1,16 @@
-﻿@{
+﻿@model IEnumerable<Autos4Sale.Data.Models.CarOffer>
+
+@{
     ViewBag.Title = "Home Page";
 }
+<hr />
+<div>
+    @foreach (var item in Model)
+    {
+       <h1>@item.Price</h1>
+    }
+</div>
+
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>

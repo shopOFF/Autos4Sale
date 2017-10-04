@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autos4Sale.Services.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,18 @@ namespace Autos4Sale.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICarOffersService carOffersService;
+
+        public HomeController(ICarOffersService carOffersService)
+        {
+            this.carOffersService = carOffersService;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var carOffers = this.carOffersService.GetAll().ToList();
+
+            return View(carOffers);
         }
 
         public ActionResult About()
