@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Autos4Sale.Data.Models.CarOffer>
+﻿@model IEnumerable<Autos4Sale.Web.Models.CarOfferViewModel>
 
 @{
     ViewBag.Title = "Home Page";
@@ -7,9 +7,14 @@
 <div>
     @foreach (var item in Model)
     {
-       <h1>@item.Price</h1>
+        <h1>@item.AuthorEmail</h1>
+        <h1>@item.Brand</h1>
+        <h1>@item.Model</h1>
+        <h1>@item.YearManufacured</h1>
+        <hr />
     }
 </div>
+
 
 
 <div class="jumbotron">

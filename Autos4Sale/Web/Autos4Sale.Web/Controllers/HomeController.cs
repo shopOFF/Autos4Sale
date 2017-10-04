@@ -1,4 +1,5 @@
 ﻿using Autos4Sale.Services.Contracts;
+using Autos4Sale.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,16 @@ namespace Autos4Sale.Web.Controllers
 
         public ActionResult Index()
         {
-            var carOffers = this.carOffersService.GetAll().ToList();
+            var carOffers = this.carOffersService
+                .GetAll()
+                .Select(x => new CarOfferViewModel()
+                {
+                    AuthorEmail = x.Author.Email,
+                    Brand = x.Brand,
+                    Model = x.Model,
+                    YearManufacured = x.YearManufacured
+                })
+                .ToList();
 
             return View(carOffers);
         }
