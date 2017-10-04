@@ -54,13 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autos4SaleDbContext.cs" />
-    <Compile Include="Migrations\201710021733260_init.cs" />
-    <Compile Include="Migrations\201710021733260_init.Designer.cs">
-      <DependentUpon>201710021733260_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710021735191_new models added.cs" />
-    <Compile Include="Migrations\201710021735191_new models added.Designer.cs">
-      <DependentUpon>201710021735191_new models added.cs</DependentUpon>
+    <Compile Include="Migrations\201710040903495_initial.cs" />
+    <Compile Include="Migrations\201710040903495_initial.Designer.cs">
+      <DependentUpon>201710040903495_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,11 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710021733260_init.resx">
-      <DependentUpon>201710021733260_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710021735191_new models added.resx">
-      <DependentUpon>201710021735191_new models added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710040903495_initial.resx">
+      <DependentUpon>201710040903495_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

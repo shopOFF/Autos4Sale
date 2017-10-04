@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace Autos4Sale.Data.Common.Repositories
             this.dbContext = dbcontext;
         }
 
-        public IQueryable<T> All
+        public IQueryable<T> GetAll
         {
             get
             {
@@ -28,12 +29,22 @@ namespace Autos4Sale.Data.Common.Repositories
             }
         }
 
-        public IQueryable<T> AllAndDeleted
+        public IQueryable<T> GetAllAndDeleted
         {
             get
             {
                 return this.dbContext.Set<T>();
             }
+        }
+
+        public T GetById(object id)
+        {
+            return this.dbContext.Set<T>().Find(id);
+        }
+
+        public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
+        {
+            return this.dbContext.Set<T>().Where(predicate);
         }
 
         public void Add(T entity)

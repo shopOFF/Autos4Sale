@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos4Sale.Data.Models", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos4Sale.Data.Common", "Data\Autos4Sale.Data.Common\Autos4Sale.Data.Common.csproj", "{DD14861B-3508-4015-832E-2E0002B9B16F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E5941C26-F9FD-411F-AB23-7586D71ADD22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos4Sale.Services", "Services\Autos4Sale.Services\Autos4Sale.Services.csproj", "{787E8868-7F94-4E83-A028-B051640E1DFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{DD14861B-3508-4015-832E-2E0002B9B16F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD14861B-3508-4015-832E-2E0002B9B16F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD14861B-3508-4015-832E-2E0002B9B16F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{787E8868-7F94-4E83-A028-B051640E1DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787E8868-7F94-4E83-A028-B051640E1DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787E8868-7F94-4E83-A028-B051640E1DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{787E8868-7F94-4E83-A028-B051640E1DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{F1307AEF-8D8C-44F1-9249-CEA6E6B7D4A2} = {C3866016-A512-4615-9976-DDC784795A99}
 		{280798CB-7923-404F-90BB-E890B732D781} = {C3866016-A512-4615-9976-DDC784795A99}
 		{DD14861B-3508-4015-832E-2E0002B9B16F} = {C3866016-A512-4615-9976-DDC784795A99}
+		{787E8868-7F94-4E83-A028-B051640E1DFE} = {E5941C26-F9FD-411F-AB23-7586D71ADD22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5171F164-B722-4CA9-90F3-A8DFAC578E77}
