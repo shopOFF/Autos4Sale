@@ -24,11 +24,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        if (User.IsInRole("Admin"))
-                        {
+                        //if (User.IsInRole("Admin"))
+                        //{
                             <li>@Html.ActionLink("About", "About", "Home")</li>
-
-                        }
+                        //}
                     }
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>

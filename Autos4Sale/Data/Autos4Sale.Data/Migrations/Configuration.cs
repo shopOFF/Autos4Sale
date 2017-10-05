@@ -32,12 +32,15 @@ namespace Autos4Sale.Data.Migrations
         {
             if (!dbContext.Roles.Any())
             {
-                var roleName = "Admin";
+                var adminRole = "Admin";
+                var userRole = "User";
 
                 var roleStore = new RoleStore<IdentityRole>(dbContext);
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = new IdentityRole { Name = roleName };
-                roleManager.Create(role);
+                var aRole = new IdentityRole { Name = adminRole };
+                var uRole = new IdentityRole { Name = userRole };
+                roleManager.Create(aRole);
+                roleManager.Create(uRole);
 
                 var userStore = new UserStore<User>(dbContext);
                 var userManager = new UserManager<User>(userStore);
@@ -50,7 +53,7 @@ namespace Autos4Sale.Data.Migrations
                 };
 
                 userManager.Create(user, AdministratorPassword);
-                userManager.AddToRole(user.Id, roleName);
+                userManager.AddToRole(user.Id, adminRole);
             }
         }
 
