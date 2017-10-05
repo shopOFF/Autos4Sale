@@ -8,6 +8,7 @@ using Owin;
 using Autos4Sale.Web.Models;
 using Autos4Sale.Data;
 using Autos4Sale.Data.Models;
+using Autos4Sale.Web.App_Start;
 
 namespace Autos4Sale.Web
 {

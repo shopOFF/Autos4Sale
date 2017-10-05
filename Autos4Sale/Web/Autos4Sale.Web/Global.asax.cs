@@ -15,6 +15,9 @@ namespace Autos4Sale.Web
     {
         protected void Application_Start()
         {
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
+
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<Autos4SaleDbContext, Configuration>());
 
             AreaRegistration.RegisterAllAreas();
