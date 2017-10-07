@@ -37,7 +37,7 @@ namespace Autos4Sale.Web.Controllers
             return View(carOffers);
         }
 
-        [Authorize(Roles = "Admin, User")]
+       // [Authorize(Roles = "Admin, User")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
