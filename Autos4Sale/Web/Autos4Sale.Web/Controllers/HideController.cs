@@ -8,6 +8,7 @@ namespace Autos4Sale.Web.Controllers
 {
     public class HideController : Controller
     {
+        //[Authorize(Roles = "Admin, User")] // this way works
         public ActionResult Test()
         {
             ViewBag.Message = "Your application description page.";
