@@ -1,5 +1,5 @@
-﻿using AutoMapper.QueryableExtensions;
-using Autos4Sale.Services.Contracts;
+﻿using Autos4Sale.Services.Contracts;
+using Autos4Sale.Web.Infrastructure;
 using Autos4Sale.Web.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
@@ -19,7 +19,7 @@ namespace Autos4Sale.Web.Controllers
         {
             var carOffers = this.carOffersService
                 .GetAll()
-                .ProjectTo<CarOfferViewModel>()
+                .MapTo<CarOfferViewModel>()
                 .ToList();
 
             return View(carOffers);
