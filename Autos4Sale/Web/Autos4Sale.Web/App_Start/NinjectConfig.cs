@@ -86,7 +86,6 @@ namespace Autos4Sale.Web.App_Start
             kernel.Bind(typeof(DbContext), typeof(Autos4SaleDbContext)).To<Autos4SaleDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind<IEfUnitOfWork>().To<EfUnitOfWork>();
-            kernel.Bind<IMapper>().ToMethod(x => Mapper.Instance).InSingletonScope();
         }        
     }
 }

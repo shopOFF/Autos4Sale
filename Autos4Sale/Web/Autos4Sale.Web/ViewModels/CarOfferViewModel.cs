@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 
-namespace Autos4Sale.Web.Models
+namespace Autos4Sale.Web.ViewModels
 {
     public class CarOfferViewModel : IMapFrom<CarOffer>, IHaveCustomMappings
     {

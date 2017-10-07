@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Autos4Sale.Web.Models;
+using Autos4Sale.Web.ViewModels;
 using Autos4Sale.Data;
 using Autos4Sale.Data.Models;
 using Autos4Sale.Web.App_Start;

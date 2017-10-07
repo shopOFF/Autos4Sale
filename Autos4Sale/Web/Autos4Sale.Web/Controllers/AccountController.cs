@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Autos4Sale.Web.Models;
+using Autos4Sale.Web.ViewModels;
 using Autos4Sale.Data.Models;
 using Autos4Sale.Web.App_Start;
 using Autos4Sale.Web.ViewModels.Account;
