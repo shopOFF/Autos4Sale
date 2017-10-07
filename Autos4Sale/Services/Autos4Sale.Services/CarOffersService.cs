@@ -12,10 +12,12 @@ namespace Autos4Sale.Services
     public class CarOffersService : ICarOffersService
     {
         private readonly IEfRepository<CarOffer> carOffersRepo;
+        private readonly IEfUnitOfWork dbContext;
 
-        public CarOffersService(IEfRepository<CarOffer> carOffersRepo)
+        public CarOffersService(IEfRepository<CarOffer> carOffersRepo, IEfUnitOfWork dbContext)
         {
             this.carOffersRepo = carOffersRepo;
+            this.dbContext = dbContext;
         }
 
         public IQueryable<CarOffer> GetAll()

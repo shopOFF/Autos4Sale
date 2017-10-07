@@ -8,6 +8,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autos4Sale.Data;
 using Autos4Sale.Data.Migrations;
+using Autos4Sale.Web.App_Start;
+using System.Reflection;
 
 namespace Autos4Sale.Web
 {
@@ -24,6 +26,9 @@ namespace Autos4Sale.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(Assembly.GetExecutingAssembly());
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Autos4Sale.Web.App_Start
     using System.Data.Entity;
     using Autos4Sale.Data;
     using Autos4Sale.Services.Contracts;
+    using Autos4Sale.Data.Common;
+    using AutoMapper;
 
     public static class NinjectConfig 
     {
@@ -83,6 +85,8 @@ namespace Autos4Sale.Web.App_Start
 
             kernel.Bind(typeof(DbContext), typeof(Autos4SaleDbContext)).To<Autos4SaleDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
+            kernel.Bind<IEfUnitOfWork>().To<EfUnitOfWork>();
+            kernel.Bind<IMapper>().ToMethod(x => Mapper.Instance).InSingletonScope();
         }        
     }
 }
