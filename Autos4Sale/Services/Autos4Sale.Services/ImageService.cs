@@ -15,23 +15,28 @@ namespace Autos4Sale.Services
     public class ImageService : IImageService
     {
         private readonly IEfRepository<User> usersRepo;
+        private readonly string currentUserId;
+        private readonly User currentUser; 
 
         public ImageService(IEfRepository<User> usersRepo)
         {
             this.usersRepo = usersRepo;
+            this.currentUserId= HttpContext.Current.User.Identity.GetUserId();
+            this.currentUser= this.usersRepo.GetAll.Where(x => x.Id == this.currentUserId).FirstOrDefault();
         }
 
-        string currentUserId = HttpContext.Current.User.Identity.GetUserId();
-
+        private string RenameImage(int counter)
+        {
+            return $"{currentUser.Email}-image-{counter}-{Guid.NewGuid()}.jpg";
+        }
         public ICollection<Image> SaveImages(IEnumerable<HttpPostedFileBase> images)
         {
             var counter = 1;
             var collectionOfImages = new List<Image>();
-            var currentUser = this.usersRepo.GetAll.Where(x => x.Id == currentUserId).FirstOrDefault();
 
             foreach (var image in images)
             {
-                var imageNewName = $"{currentUser.Email}-image-{counter}-{Guid.NewGuid()}.jpg";
+                var imageNewName = this.RenameImage(counter);
 
                 var imageModel = new Image()
                 {
