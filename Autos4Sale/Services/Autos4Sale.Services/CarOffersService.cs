@@ -24,5 +24,19 @@ namespace Autos4Sale.Services
         {
             return this.carOffersRepo.GetAll;
         }
+
+        public void Add(CarOffer carOffer)
+        {
+            this.carOffersRepo.Add(carOffer);
+
+            this.dbContext.Commit();
+        }
+
+        public void Update(CarOffer carOffer)
+        {
+            this.carOffersRepo.Update(carOffer);
+
+            this.dbContext.Commit();
+        }
     }
 }

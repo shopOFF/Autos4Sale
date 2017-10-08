@@ -1,0 +1,28 @@
+﻿@model Autos4Sale.Web.ViewModels.CarOfferViewModel
+
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+@using (Html.BeginForm("Upload", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        @Html.LabelFor(c => c.Brand, "Car Manufacurer")
+        @Html.TextBoxFor(c => c.Brand)
+    </div>
+    <div>
+        @Html.LabelFor(c => c.Model, "Car Model")
+        @Html.TextBoxFor(c => c.Model)
+    </div>
+    <div>
+        @Html.LabelFor(c => c.Description, "Car Additional Description")
+        @Html.TextAreaFor(c => c.Description)
+    </div>
+    <div>
+        <input type="file" name="images" multiple />
+    </div>
+    <button class="btn btn-default">Upload</button>
+}

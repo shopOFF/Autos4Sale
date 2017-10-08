@@ -18,21 +18,22 @@ namespace Autos4Sale.Web.App_Start
     using Autos4Sale.Services.Contracts;
     using Autos4Sale.Data.Common;
     using AutoMapper;
+    using Autos4Sale.Services;
 
-    public static class NinjectConfig 
+    public static class NinjectConfig
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
         /// Stops the application.
         /// </summary>
@@ -40,7 +41,7 @@ namespace Autos4Sale.Web.App_Start
         {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
@@ -73,19 +74,21 @@ namespace Autos4Sale.Web.App_Start
             {
                 x.FromThisAssembly()
                  .SelectAllClasses()
-                 .BindDefaultInterface();
+                 .BindDefaultInterface()
+                 .Configure(y => y.InRequestScope());
             });
 
             kernel.Bind(x =>
             {
                 x.FromAssemblyContaining(typeof(IService))
                  .SelectAllClasses()
-                 .BindDefaultInterface();
+                 .BindDefaultInterface()
+                  .Configure(y => y.InRequestScope());
             });
 
             kernel.Bind(typeof(DbContext), typeof(Autos4SaleDbContext)).To<Autos4SaleDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind<IEfUnitOfWork>().To<EfUnitOfWork>();
-        }        
+        }
     }
 }

@@ -10,6 +10,13 @@ namespace Autos4Sale.Web.ViewModels
 {
     public class CarOfferViewModel : IMapFrom<CarOffer>, IHaveCustomMappings
     {
+        private ICollection<Image> image;
+
+        public CarOfferViewModel()
+        {
+            this.image = new HashSet<Image>();
+        }
+
         public string AuthorEmail { get; set; }
 
         public string Brand { get; set; }
@@ -17,6 +24,14 @@ namespace Autos4Sale.Web.ViewModels
         public string Model { get; set; }
 
         public int YearManufacured { get; set; }
+
+        public string Description { get; set; }
+
+        public ICollection<Image> Image
+        {
+            get { return this.image; }
+            set { image = value; }
+        }
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {

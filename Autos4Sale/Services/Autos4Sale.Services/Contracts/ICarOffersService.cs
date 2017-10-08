@@ -6,5 +6,9 @@ namespace Autos4Sale.Services.Contracts
     public interface ICarOffersService
     {
         IQueryable<CarOffer> GetAll();
+
+        void Add(CarOffer carOffer);
+
+        void Update(CarOffer carOffer);
     }
 }
