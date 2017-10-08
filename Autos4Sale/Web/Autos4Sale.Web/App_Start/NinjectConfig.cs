@@ -11,14 +11,14 @@ namespace Autos4Sale.Web.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Extensions.Conventions;
-    using Autos4Sale.Data.Common.Contracts;
-    using Autos4Sale.Data.Common.Repositories;
     using System.Data.Entity;
     using Autos4Sale.Data;
     using Autos4Sale.Services.Contracts;
-    using Autos4Sale.Data.Common;
     using AutoMapper;
     using Autos4Sale.Services;
+    using Autos4Sale.Data.Common.Contracts;
+    using Autos4Sale.Data.Common;
+    using Autos4Sale.Data.Common.Repositories;
 
     public static class NinjectConfig
     {
@@ -74,16 +74,14 @@ namespace Autos4Sale.Web.App_Start
             {
                 x.FromThisAssembly()
                  .SelectAllClasses()
-                 .BindDefaultInterface()
-                 .Configure(y => y.InRequestScope());
+                 .BindDefaultInterface();
             });
 
             kernel.Bind(x =>
             {
                 x.FromAssemblyContaining(typeof(IService))
                  .SelectAllClasses()
-                 .BindDefaultInterface()
-                  .Configure(y => y.InRequestScope());
+                 .BindDefaultInterface();
             });
 
             kernel.Bind(typeof(DbContext), typeof(Autos4SaleDbContext)).To<Autos4SaleDbContext>().InRequestScope();

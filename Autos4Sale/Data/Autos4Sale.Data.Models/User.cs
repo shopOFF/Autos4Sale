@@ -14,6 +14,13 @@ namespace Autos4Sale.Data.Models
 {
     public class User : IdentityUser, IAuditable, IDeletable
     {
+        private ICollection<CarOffer> carOffers;
+
+        public User()
+        {
+            this.carOffers = new HashSet<CarOffer>();
+        }
+
         [Index]
         public bool IsDeleted { get; set; }
 
@@ -25,6 +32,18 @@ namespace Autos4Sale.Data.Models
 
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
+
+        public virtual ICollection<CarOffer> CarOffers
+        {
+            get
+            {
+                return this.carOffers;
+            }
+            set
+            {
+                this.carOffers = value;
+            }
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

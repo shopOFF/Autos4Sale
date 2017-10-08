@@ -5,9 +5,9 @@ namespace Autos4Sale.Data.Common
 {
     public class EfUnitOfWork : IEfUnitOfWork
     {
-        private readonly DbContext dbContext;
+        private readonly Autos4SaleDbContext dbContext;
 
-        public EfUnitOfWork(DbContext dbcontext)
+        public EfUnitOfWork(Autos4SaleDbContext dbcontext)
         {
             this.dbContext = dbcontext;
         }

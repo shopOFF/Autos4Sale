@@ -6,17 +6,15 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Autos4Sale.Data.Common.Repositories
 {
     public class EfRepository<T> : IEfRepository<T>
         where T : class, IDeletable
     {
-        private readonly DbContext dbContext;
+        private readonly Autos4SaleDbContext dbContext;
 
-        public EfRepository(DbContext dbcontext)
+        public EfRepository(Autos4SaleDbContext dbcontext)
         {
             this.dbContext = dbcontext;
         }

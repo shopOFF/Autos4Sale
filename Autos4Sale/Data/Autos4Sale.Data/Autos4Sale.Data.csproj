@@ -70,6 +70,14 @@
     <Compile Include="Migrations\201710051626275_up on context.Designer.cs">
       <DependentUpon>201710051626275_up on context.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710081108458_fix dbcontext bug.cs" />
+    <Compile Include="Migrations\201710081108458_fix dbcontext bug.Designer.cs">
+      <DependentUpon>201710081108458_fix dbcontext bug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081124327_up on user.cs" />
+    <Compile Include="Migrations\201710081124327_up on user.Designer.cs">
+      <DependentUpon>201710081124327_up on user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710051626275_up on context.resx">
       <DependentUpon>201710051626275_up on context.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081108458_fix dbcontext bug.resx">
+      <DependentUpon>201710081108458_fix dbcontext bug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081124327_up on user.resx">
+      <DependentUpon>201710081124327_up on user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

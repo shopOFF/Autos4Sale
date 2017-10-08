@@ -14,8 +14,6 @@ namespace Autos4Sale.Data
         {
         }
 
-        //public virtual IDbSet<User> Users { get; set; }
-
         public virtual IDbSet<CarOffer> CarOffers { get; set; }
 
         public virtual IDbSet<Image> Images { get; set; }

@@ -17,10 +17,12 @@ namespace Autos4Sale.Web.Controllers
     public class UploadController : Controller
     {
         private readonly ICarOffersService carOffersService;
+        private readonly IImageService imageService;
 
-        public UploadController(ICarOffersService carOffersService)
+        public UploadController(ICarOffersService carOffersService, IImageService imageService)
         {
             this.carOffersService = carOffersService;
+            this.imageService = imageService;
         }
 
         [HttpGet]
@@ -35,35 +37,16 @@ namespace Autos4Sale.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Upload(CarOfferViewModel offer, IEnumerable<HttpPostedFileBase> images)
         {
-            var counter = 1;
-            var collectionOfImages = new List<Image>();
-            var appUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-
-            foreach (var image in images)
-            {
-                var imageNewName = $"{appUser.Email}-image-{counter}-{Guid.NewGuid()}.jpg";
-
-                var imageModel = new Image()
-                {
-                    ImageUrl = imageNewName,
-                    Author = appUser
-                };
-
-                collectionOfImages.Add(imageModel);
-
-                image.SaveAs(Server.MapPath($"~/Images/{imageNewName}"));
-
-                counter++;
-            }
+            var imgs = this.imageService.SaveImages(images);
 
             var carOffer = new CarOffer()
             {
-                Author = appUser,
+                Author = imgs.FirstOrDefault().Author,
                 Brand = offer.Brand,
                 Model = offer.Model,
                 Description = offer.Description,
                 CreatedOn = DateTime.Now,
-                Image = collectionOfImages,
+                Image = imgs,
                 Color = ColorType.Aqua,
                 Engine = EngineType.Diesel,
                 Transmission = TransmissionType.Automatic,
