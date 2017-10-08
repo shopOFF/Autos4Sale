@@ -9,20 +9,37 @@
 @using (Html.BeginForm("Upload", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <div>
-        @Html.LabelFor(c => c.Brand, "Car Manufacurer")
-        @Html.TextBoxFor(c => c.Brand)
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Brand, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(c => c.Brand, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Brand, "", new { @class = "text-danger" })
     </div>
-    <div>
-        @Html.LabelFor(c => c.Model, "Car Model")
-        @Html.TextBoxFor(c => c.Model)
+    <div class="form-group">
+        @Html.LabelFor(c => c.Model, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(c => c.Model, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Model, "", new { @class = "text-danger" })
     </div>
-    <div>
-        @Html.LabelFor(c => c.Description, "Car Additional Description")
-        @Html.TextAreaFor(c => c.Description)
-    </div>
-    <div>
-        <input type="file" name="images" multiple />
-    </div>
-    <button class="btn btn-default">Upload</button>
+        <div class="form-group">
+            @Html.LabelFor(c => c.Description, new { @class = "col-md-2 control-label" })
+            @Html.TextBoxFor(c => c.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Description, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.Engine, new { @class = "col-md-2 control-label" })
+            @Html.TextBoxFor(c => c.Engine, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Engine, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <div>
+                    <input type="file" name="images" multiple style="margin-top:30px;" />
+                </div>
+                <button class="btn btn-default" style="margin-top:30px;">Upload</button>
+            </div>
+        </div>
 }
+
