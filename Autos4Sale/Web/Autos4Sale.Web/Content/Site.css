@@ -35,20 +35,25 @@ footer {
 .price {
     color: firebrick;
 }
+
 .img-container {
-    margin-top: 0px;
+    margin-bottom: 20px;
     padding-top: 0px;
     float: left;
-    margin-right:20px;
+    margin-right: 20px;
 }
 
-.well{
-    width:800px;
+.well {
     color: black;
+    padding-bottom: 25px;
 }
+
 .text-container {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 40px;
     padding-top: 0px;
+}
+.main-container{
+    width:1000px;
 }

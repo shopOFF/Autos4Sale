@@ -8,7 +8,7 @@ using AutoMapper;
 using Autos4Sale.Data.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Autos4Sale.Web.ViewModels
+namespace Autos4Sale.Web.ViewModels.Shared
 {
     public class CarOfferViewModel : IMapFrom<CarOffer>, IHaveCustomMappings
     {
@@ -18,6 +18,8 @@ namespace Autos4Sale.Web.ViewModels
         {
             this.image = new HashSet<Image>();
         }
+
+        public Guid Id { get; set; }
 
         public User Author { get; set; }
 

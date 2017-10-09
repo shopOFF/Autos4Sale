@@ -1,6 +1,7 @@
 ﻿using Autos4Sale.Services.Contracts;
 using Autos4Sale.Web.Infrastructure;
 using Autos4Sale.Web.ViewModels;
+using Autos4Sale.Web.ViewModels.Shared;
 using System.Linq;
 using System.Web.Mvc;
 

@@ -1,8 +1,29 @@
-﻿
+﻿@model Autos4Sale.Web.ViewModels.Shared.CarOfferViewModel
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Car Details</h2>
+<hr />
+<div class="main-container">
+    @{
+        <div class="well">
+            <div class="img-container">
+                @foreach (var item in Model.Image)
+                {
+                    <tr>
+                        <td><img src="~/Images/@item.ImageUrl" class="img-thumbnail" /></td>
+                    </tr>
+                }
+            </div>
+            <div class="text-container">
+                <h4><strong>@Model.Brand @Model.Model</strong></h4>
+                <h4 class="price"><strong>€@Model.Price</strong></h4>
+                <h5>Year Manufactured: @Model.YearManufacured</h5>
+                <h5>Date Added: @Model.ModifiedOn</h5>
+            </div>
+        </div>
+    }
+</div>
 

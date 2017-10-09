@@ -1,5 +1,4 @@
-﻿using Autos4Sale.Web.ViewModels;
-using Autos4Sale.Data.Models;
+﻿using Autos4Sale.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +11,7 @@ using Autos4Sale.Services.Contracts;
 using Autos4Sale.Web.Infrastructure;
 using Autos4Sale.Data.Models.Enums;
 using AutoMapper;
+using Autos4Sale.Web.ViewModels.Shared;
 
 namespace Autos4Sale.Web.Controllers
 {
