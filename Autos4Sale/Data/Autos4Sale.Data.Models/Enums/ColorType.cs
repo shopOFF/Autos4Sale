@@ -2,7 +2,7 @@
 {
     public enum ColorType
     {
-        Aqua = 1,
+        Any = 1,
         Azure = 2,
         Beige = 3,
         Bisque = 4,

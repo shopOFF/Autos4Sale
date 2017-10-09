@@ -25,7 +25,7 @@ namespace Autos4Sale.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-sandstone.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

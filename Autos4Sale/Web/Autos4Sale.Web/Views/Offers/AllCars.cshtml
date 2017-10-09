@@ -10,18 +10,17 @@
 <div>
     @foreach (var offer in Model)
     {
-        <h3>@offer.Author.Email</h3>
-        <h3>@offer.Brand</h3>
-        <h3>@offer.Model</h3>
-        <h3>@offer.YearManufacured</h3>
-        <h3>@offer.ModifiedOn</h3>
+        <h4>@offer.Author.Email</h4>
+        <h4>@offer.Brand</h4>
+        <h4>@offer.Model</h4>
+        <h4>@offer.YearManufacured</h4>
+        <h4>@offer.ModifiedOn</h4>
 
         <div>
-            Images:
             @foreach (var item in offer.Image)
             {
                 <tr>
-                    <td><img src="~/Images/@item.ImageUrl" width="150" height="100" /></td>
+                    <td><img src="~/Images/@item.ImageUrl" class="img-thumbnail" /></td>
                 </tr>
             }
 

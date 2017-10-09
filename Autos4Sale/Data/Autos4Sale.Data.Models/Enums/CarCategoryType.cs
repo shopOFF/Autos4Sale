@@ -2,12 +2,13 @@
 {
     public enum CarCategoryType
     {
-        Saloon = 1,
-        Estate = 2,
-        Cabriolet = 3,
-        Coupe = 4,
-        SUV = 5,
-        Van = 6,
-        Other = 7
+        Any = 1,
+        Saloon = 2,
+        Estate = 3,
+        Cabriolet = 4,
+        Coupe = 5,
+        SUV = 6,
+        Van = 7,
+        Other = 8
     }
 }

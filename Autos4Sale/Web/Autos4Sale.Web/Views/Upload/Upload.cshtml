@@ -33,9 +33,9 @@
             @Html.ValidationMessageFor(c => c.YearManufacured, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
-            @Html.LabelFor(c => c.CarCategory, new { @class = "col-md-2 control-label" })
-            @Html.EnumDropDownListFor(c => c.CarCategory, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => c.CarCategory, "", new { @class = "text-danger" })
+            @Html.LabelFor(c => c.Mileage, new { @class = "col-md-2 control-label" })
+            @Html.TextBoxFor(c => c.Mileage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Mileage, "", new { @class = "text-danger" })
         </div>
     </div>
     <br />
@@ -43,12 +43,12 @@
     <div class="form-group">
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Color, new { @class = "col-md-2 control-label" })
-            @Html.EnumDropDownListFor(c => c.Color, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(c => c.Color, "Select Color Type", new { @class = "form-control" })
             @Html.ValidationMessageFor(c => c.Color, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Transmission, new { @class = "col-md-2 control-label" })
-            @Html.EnumDropDownListFor(c => c.Transmission, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(c => c.Transmission, "Select Transmission Type", new { @class = "form-control" })
             @Html.ValidationMessageFor(c => c.Transmission, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -57,13 +57,13 @@
     <div class="form-group">
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Engine, new { @class = "col-md-2 control-label" })
-            @Html.EnumDropDownListFor(c => c.Engine, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(c => c.Engine, "Select Engine Type", new { @class = "form-control" })
             @Html.ValidationMessageFor(c => c.Engine, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
-            @Html.LabelFor(c => c.Mileage, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.Mileage, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => c.Mileage, "", new { @class = "text-danger" })
+            @Html.LabelFor(c => c.CarCategory, new { @class = "col-md-2 control-label" })
+            @Html.EnumDropDownListFor(c => c.CarCategory, "Select Category Type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.CarCategory, "", new { @class = "text-danger" })
         </div>
     </div>
     <br />
@@ -103,7 +103,6 @@
             @Html.ValidationMessageFor(c => c.Description, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         <div class="col-md-12">
             <div>

@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.img-thumbnail {
+    width:150px;
+    height:100px;
+}
+
+footer {
+   margin-top:1220px;
+}

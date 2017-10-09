@@ -23,6 +23,7 @@ namespace Autos4Sale.Web.Controllers
         {
             var carOffers = this.carOffersService
                  .GetAll()
+                 .Where(x => x.Image.Count != 0)
                  .MapTo<CarOfferViewModel>()
                  .ToList();
 
