@@ -29,5 +29,17 @@ namespace Autos4Sale.Web.Controllers
 
             return View(carOffers);
         }
+
+        [HttpGet]
+        public ActionResult Details()
+        {
+            //var carOffers = this.carOffersService
+            //     .GetAll()
+            //     .Where(x => x.Image.Count != 0)
+            //     .MapTo<CarOfferViewModel>()
+            //     .ToList();
+
+            return View();
+        }
     }
 }

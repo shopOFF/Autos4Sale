@@ -5,27 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AllCars</h2>
-<hr />
 <div>
-    @foreach (var offer in Model)
-    {
-        <h4>@offer.Author.Email</h4>
-        <h4>@offer.Brand</h4>
-        <h4>@offer.Model</h4>
-        <h4>@offer.YearManufacured</h4>
-        <h4>@offer.ModifiedOn</h4>
-
-        <div>
-            @foreach (var item in offer.Image)
+    @{
+        if (Model.Count() < 1)
+        {
+            <h1>No Offers To Display</h1>
+        }
+        else
+        {
+            <h2>All Car Offers</h2>
+            <hr />
+            foreach (var offer in Model)
             {
-                <tr>
-                    <td><img src="~/Images/@item.ImageUrl" class="img-thumbnail" /></td>
-                </tr>
+                <a href="@Url.Action("Details", "Offers")" class="details-link">
+                    <div class="well">
+                        <div class="img-container">
+                            @{
+                                var item = offer.Image.FirstOrDefault();
+                            }
+                            <tr>
+                                <td><img src="~/Images/@item.ImageUrl" class="img-thumbnail" /></td>
+                            </tr>
+                        </div>
+                        <div class="text-container">
+                            <h4><strong>@offer.Brand @offer.Model</strong></h4>
+                            <h4 class="price"><strong>€@offer.Price</strong></h4>
+                            <h5>Year Manufactured: @offer.YearManufacured</h5>
+                            <h5>Date Added: @offer.ModifiedOn</h5>
+                        </div>
+                    </div>
+                </a>
             }
-
-        </div>
-        <hr />
+        }
     }
 </div>
-

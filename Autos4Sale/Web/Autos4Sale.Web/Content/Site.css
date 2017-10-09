@@ -24,10 +24,31 @@ textarea {
 }
 
 .img-thumbnail {
-    width:150px;
-    height:100px;
+    width: 200px;
+    height: 150px;
 }
 
 footer {
-   margin-top:1220px;
+    margin-top: 1220px;
+}
+
+.price {
+    color: firebrick;
+}
+.img-container {
+    margin-top: 0px;
+    padding-top: 0px;
+    float: left;
+    margin-right:20px;
+}
+
+.well{
+    width:800px;
+    color: black;
+}
+.text-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    padding-top: 0px;
 }

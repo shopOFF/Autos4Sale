@@ -15,12 +15,12 @@
     <div class="form-group">
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Brand, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.Brand, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.Brand, new { @class = "form-control", placeholder = "Enter Brand" })
             @Html.ValidationMessageFor(c => c.Brand, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Model, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.Model, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.Model, new { @class = "form-control", placeholder = "Enter Model" })
             @Html.ValidationMessageFor(c => c.Model, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -29,12 +29,12 @@
     <div class="form-group">
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.YearManufacured, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.YearManufacured, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.YearManufacured, new { @class = "form-control", placeholder = "Enter Year Manufacured-yyyy" })
             @Html.ValidationMessageFor(c => c.YearManufacured, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Mileage, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.Mileage, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.Mileage, new { @class = "form-control", placeholder = "Enter Mileage In Km" })
             @Html.ValidationMessageFor(c => c.Mileage, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -71,12 +71,12 @@
     <div class="form-group">
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.SellersCurrentPhone, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.SellersCurrentPhone, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.SellersCurrentPhone, new { @class = "form-control", placeholder = "Enter Phone" })
             @Html.ValidationMessageFor(c => c.SellersCurrentPhone, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.HorsePower, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.HorsePower, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.HorsePower, new { @class = "form-control", placeholder = "Enter Horse Power" })
             @Html.ValidationMessageFor(c => c.HorsePower, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -85,12 +85,12 @@
     <div class="form-group">
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Location, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.Location, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.Location, new { @class = "form-control", placeholder = "Enter Location" })
             @Html.ValidationMessageFor(c => c.Location, "", new { @class = "text-danger" })
         </div>
         <div class="col-xs-6 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Price, new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(c => c.Price, new { @class = "form-control" })
+            @Html.TextBoxFor(c => c.Price, new { @class = "form-control", placeholder = "Enter Price in Euro €" })
             @Html.ValidationMessageFor(c => c.Price, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -99,7 +99,7 @@
     <div class="form-group">
         <div class="col-md-9 col-sm-3" style="margin-bottom:15px;">
             @Html.LabelFor(c => c.Description, new { @class = "col-md-2 control-label" })
-            @Html.TextAreaFor(c => c.Description, new { @class = "form-control" })
+            @Html.TextAreaFor(c => c.Description, new { @class = "form-control", placeholder = "Enter Description" })
             @Html.ValidationMessageFor(c => c.Description, "", new { @class = "text-danger" })
         </div>
     </div>
