@@ -27,22 +27,26 @@ namespace Autos4Sale.Web.ViewModels
         [Display(Name = "Car Model")]
         public string Model { get; set; }
 
+        [Display(Name = "Year Manufacured")]
         public int YearManufacured { get; set; }
 
         public TransmissionType Transmission { get; set; }
 
         public EngineType Engine { get; set; }
 
+        [Display(Name = "Car Category")]
         public CarCategoryType CarCategory { get; set; }
 
         public int Mileage { get; set; }
 
+        [Display(Name = "Horse Power")]
         public int HorsePower { get; set; }
 
         public string Description { get; set; }
 
         public int Price { get; set; }
 
+        [Display(Name = "Seller's Phone")]
         public string SellersCurrentPhone { get; set; }
 
         public ColorType Color { get; set; }

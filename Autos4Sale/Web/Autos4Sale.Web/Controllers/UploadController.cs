@@ -11,6 +11,7 @@ using Autos4Sale.Web.App_Start;
 using Autos4Sale.Services.Contracts;
 using Autos4Sale.Web.Infrastructure;
 using Autos4Sale.Data.Models.Enums;
+using AutoMapper;
 
 namespace Autos4Sale.Web.Controllers
 {
@@ -18,11 +19,13 @@ namespace Autos4Sale.Web.Controllers
     {
         private readonly ICarOffersService carOffersService;
         private readonly IImageService imageService;
+        private readonly IUserService userService;
 
-        public UploadController(ICarOffersService carOffersService, IImageService imageService)
+        public UploadController(ICarOffersService carOffersService, IImageService imageService, IUserService userService)
         {
             this.carOffersService = carOffersService;
             this.imageService = imageService;
+            this.userService = userService;
         }
 
         [HttpGet]
@@ -39,24 +42,26 @@ namespace Autos4Sale.Web.Controllers
         {
             var imgs = this.imageService.SaveImages(images);
 
+            //var mappedOffer= Mapper.Map<CarOfferViewModel, CarOffer>(offer);
+
             var carOffer = new CarOffer()
             {
-                Author = imgs.FirstOrDefault().Author,
+                Author = userService.ReturnCurrentUser(),
                 Brand = offer.Brand,
                 Model = offer.Model,
                 Description = offer.Description,
-                CreatedOn = DateTime.Now,
                 Image = imgs,
-                Color = ColorType.Aqua,
-                Engine = EngineType.Diesel,
-                Transmission = TransmissionType.Automatic,
-                CarCategory = CarCategoryType.Cabriolet,
-                Mileage = 200000,
-                HorsePower = 200,
-                Location = "unknown",
-                Price = 2222,
-                SellersCurrentPhone = "123242342122",
-                YearManufacured = 2009
+                Color = offer.Color,
+                Engine = offer.Engine,
+                CreatedOn = DateTime.Now,
+                Transmission = offer.Transmission,
+                CarCategory = offer.CarCategory,
+                Mileage = offer.Mileage,
+                HorsePower = offer.HorsePower,
+                Location = offer.Location,
+                Price = offer.Price,
+                SellersCurrentPhone = offer.SellersCurrentPhone,
+                YearManufacured = offer.YearManufacured
             };
 
             this.carOffersService.Add(carOffer);

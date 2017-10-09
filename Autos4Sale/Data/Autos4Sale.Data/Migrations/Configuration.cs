@@ -74,7 +74,6 @@ namespace Autos4Sale.Data.Migrations
                         Engine = (EngineType)i,
                         Transmission = TransmissionType.Manual,
                         CarCategory = (CarCategoryType)i,
-                        YearManufacured = 2000 + i,
                         Mileage = 20000 + i,
                         HorsePower = 111 + i,
                         SellersCurrentPhone = "+0899101010",
