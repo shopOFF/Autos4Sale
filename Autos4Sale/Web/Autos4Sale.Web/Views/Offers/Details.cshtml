@@ -20,8 +20,22 @@
             <div class="text-container">
                 <h4><strong>@Model.Brand @Model.Model</strong></h4>
                 <h4 class="price"><strong>€@Model.Price</strong></h4>
-                <h5>Year Manufactured: @Model.YearManufacured</h5>
-                <h5>Date Added: @Model.ModifiedOn</h5>
+                <h5><strong>Year Manufactured:</strong> @Model.YearManufacured</h5>
+                <h5><strong>Category:</strong> @Model.CarCategory</h5>
+                <h5><strong>Color:</strong> @Model.Color</h5>
+                <h5><strong>Engine:</strong> @Model.Engine</h5>
+                <h5><strong>Transmission:</strong> @Model.Transmission</h5>
+                <h5><strong>Horse Power:</strong> @Model.HorsePower</h5>
+                <h5><strong>Mileage:</strong> @Model.Mileage Km</h5>
+                <h5><strong>Phone:</strong>@Model.SellersCurrentPhone</h5>
+                <h5><strong>Location:</strong> @Model.Location</h5>
+                <h5><strong>Year Manufactured:</strong> @Model.YearManufacured</h5>
+                <h5><strong>Date Added:</strong> @Model.ModifiedOn</h5>
+
+                <h5><strong>Vehicle Description: </strong></h5>
+                <h5>@Model.Description</h5>
+                <br />
+                <h5><strong>Added By: </strong>@Model.Author.UserName</h5>
             </div>
         </div>
     }
