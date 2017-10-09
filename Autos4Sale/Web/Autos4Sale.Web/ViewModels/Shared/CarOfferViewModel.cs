@@ -53,6 +53,8 @@ namespace Autos4Sale.Web.ViewModels
 
         public string Location { get; set; }
 
+        public DateTime ModifiedOn { get; set; }
+
         public ICollection<Image> Image
         {
             get { return this.image; }

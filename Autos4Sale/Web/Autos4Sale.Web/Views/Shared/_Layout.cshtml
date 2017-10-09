@@ -30,8 +30,12 @@
                         <li>@Html.ActionLink("Test", "Test", "Hide")</li>
                         //}
                     }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Upload", "Upload", "Upload")</li>
+                    }
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Upload", "Upload", "Upload")</li>
+                    <li>@Html.ActionLink("Offers", "AllCars", "Offers")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
