@@ -41,8 +41,6 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult EditOffer(Guid? id)
         {
-            var currentUser = this.userService.ReturnCurrentUser();
-
             var carOffer = this.carOffersService
             .GetAll()
             .Where(x => x.Id == id)
@@ -57,8 +55,6 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditOffer(EditableCarOfferViewModel offer)
         {
-            var currentUser = this.userService.ReturnCurrentUser();
-
             var carOffer = new CarOffer()
             {
                 Id = offer.Id,

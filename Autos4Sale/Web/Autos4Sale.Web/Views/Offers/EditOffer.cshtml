@@ -1,8 +1,19 @@
-﻿
+﻿@model Autos4Sale.Web.Areas.Administration.ViewModels.EditableCarOfferViewModel
+
 @{
     ViewBag.Title = "EditOffer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditOffer</h2>
+<div class="main-container">
+    <h2>Edit Offer</h2>
+    @using (Html.BeginForm("EditOffer", "Offers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.EditorForModel()
+        <button class="btn btn-default" style="margin-top:10px;">Edit</button>
+
+    }
+</div>
 

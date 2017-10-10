@@ -6,15 +6,13 @@
 }
 
 <div class="main-container">
-        <h2>Edit Offer</h2>
-@using (Html.BeginForm("EditOffer", "Offers", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
+    <h2>Edit Offer</h2>
+    @using (Html.BeginForm("EditOffer", "Offers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
 
-    @Html.EditorForModel()
-    <button class="btn btn-default" style="margin-top:10px;">Edit</button>
+        @Html.EditorForModel()
+        <button class="btn btn-default" style="margin-top:10px;">Edit</button>
 
-}
-    @*<input type="button" class="btn btn-default" id="edit" value="Edit" onclick="@("window.location.href='" + @Url.Action("EditOffer","Offers", new { id = Model.Id }) + "'");" />*@
-
+    }
 </div>

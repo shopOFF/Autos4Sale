@@ -1,4 +1,6 @@
-﻿using Autos4Sale.Services.Contracts;
+﻿using Autos4Sale.Data.Models;
+using Autos4Sale.Services.Contracts;
+using Autos4Sale.Web.Areas.Administration.ViewModels;
 using Autos4Sale.Web.Infrastructure;
 using Autos4Sale.Web.ViewModels.Shared;
 using System;
@@ -66,17 +68,46 @@ namespace Autos4Sale.Web.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Admin, User")]
-        public ActionResult EditOffer()
+        public ActionResult EditOffer(Guid? id)
         {
-            var currentUser = this.userService.ReturnCurrentUser();
+            var carOffer = this.carOffersService
+           .GetAll()
+           .Where(x => x.Id == id)
+           .MapTo<EditableCarOfferViewModel>()
+           .FirstOrDefault();
 
-            var yourCarOffers = this.carOffersService
-            .GetAll()
-            .Where(x => x.Author.Id == currentUser.Id)
-            .MapTo<CarOfferViewModel>()
-            .ToList();
+            return View(carOffer);
+        }
 
-            return View(yourCarOffers);
+        [HttpPost]
+        [Authorize(Roles = "Admin, User")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditOffer(EditableCarOfferViewModel offer)
+        {
+            var carOffer = new CarOffer()
+            {
+                Id = offer.Id,
+                Author = offer.Author,
+                Brand = offer.Brand,
+                Model = offer.Model,
+                Description = offer.Description,
+                Image = offer.Image,
+                Color = offer.Color,
+                Engine = offer.Engine,
+                CreatedOn = DateTime.Now,
+                Transmission = offer.Transmission,
+                CarCategory = offer.CarCategory,
+                Mileage = offer.Mileage,
+                HorsePower = offer.HorsePower,
+                Location = offer.Location,
+                Price = offer.Price,
+                SellersCurrentPhone = offer.SellersCurrentPhone,
+                YearManufacured = offer.YearManufacured
+            };
+
+            this.carOffersService.Update(carOffer);
+
+            return RedirectToAction("AllCars", "Offers");
         }
     }
 }
