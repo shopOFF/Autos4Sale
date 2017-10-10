@@ -36,8 +36,7 @@
                     </div>
                 </a>
                 <input type="button" class="btn btn-default" id="edit-btn" value="Edit" onclick="@("window.location.href='" + @Url.Action("EditOffer","Offers", new { id = offer.Id }) + "'");" />
-                <input type="button" class="btn btn-default" id="edit-btn" value="Delete" onclick="@("window.location.href='" + @Url.Action("EditOffer","Offers") + "'");" />
-
+                <input type="button" class="btn btn-default" id="edit-btn" value="Delete" onclick="@("window.location.href='" + @Url.Action("DeleteOffer","Offers", new { id = offer.Id }) + "'");"  />
             }
         }
     }

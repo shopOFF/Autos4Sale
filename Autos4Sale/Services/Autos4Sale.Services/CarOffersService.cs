@@ -38,5 +38,12 @@ namespace Autos4Sale.Services
 
             this.dbContext.Commit();
         }
+
+        public void Delete(CarOffer carOffer)
+        {
+            this.carOffersRepo.Delete(carOffer);
+
+            this.dbContext.Commit();
+        }
     }
 }

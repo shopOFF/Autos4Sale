@@ -80,5 +80,19 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
 
             return RedirectToAction("AllOffers", "Offers");
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public ActionResult DeleteOffer(Guid? id)
+        {
+            var carOfferToDelete = this.carOffersService
+                .GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
+
+            this.carOffersService.Delete(carOfferToDelete);
+
+            return RedirectToAction("AllOffers", "Offers");
+        }
     }
 }

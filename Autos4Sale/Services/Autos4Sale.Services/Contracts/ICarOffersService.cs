@@ -10,5 +10,6 @@ namespace Autos4Sale.Services.Contracts
         void Add(CarOffer carOffer);
 
         void Update(CarOffer carOffer);
+        void Delete(CarOffer carOffer);
     }
 }
