@@ -28,10 +28,10 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Upload", "Upload", "Upload")</li>
-                        //if (User.IsInRole("Admin"))
-                        //{
-                        <li>@Html.ActionLink("Test", "Test", "Hide")</li>
-                        //}
+                        if (User.IsInRole("User"))
+                        {
+                        <li>@Html.ActionLink("Your Offers", "YourOffers", "Offers")</li>
+                        }
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

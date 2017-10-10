@@ -12,10 +12,12 @@ namespace Autos4Sale.Web.Controllers
     public class OffersController : Controller
     {
         private readonly ICarOffersService carOffersService;
+        private readonly IUserService userService;
 
-        public OffersController(ICarOffersService carOffersService)
+        public OffersController(ICarOffersService carOffersService, IUserService userService)
         {
             this.carOffersService = carOffersService;
+            this.userService = userService;
         }
 
         [HttpGet]
@@ -45,6 +47,36 @@ namespace Autos4Sale.Web.Controllers
             }
 
             return RedirectToAction("AllCars");
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "User")]
+        public ActionResult YourOffers()
+        {
+            var currentUser = this.userService.ReturnCurrentUser();
+
+            var yourCarOffers = this.carOffersService
+            .GetAll()
+            .Where(x => x.Author.Id == currentUser.Id)
+            .MapTo<CarOfferViewModel>()
+            .ToList();
+
+            return View(yourCarOffers);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin, User")]
+        public ActionResult EditOffer()
+        {
+            var currentUser = this.userService.ReturnCurrentUser();
+
+            var yourCarOffers = this.carOffersService
+            .GetAll()
+            .Where(x => x.Author.Id == currentUser.Id)
+            .MapTo<CarOfferViewModel>()
+            .ToList();
+
+            return View(yourCarOffers);
         }
     }
 }

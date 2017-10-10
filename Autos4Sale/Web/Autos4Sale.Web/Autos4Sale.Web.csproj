@@ -301,6 +301,8 @@
     <Content Include="Views\Upload\Upload.cshtml" />
     <Content Include="Views\Offers\AllCars.cshtml" />
     <Content Include="Views\Offers\Details.cshtml" />
+    <Content Include="Views\Offers\YourOffers.cshtml" />
+    <Content Include="Views\Offers\EditOffer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
