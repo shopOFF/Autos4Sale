@@ -28,6 +28,7 @@ namespace Autos4Sale.Web.Controllers
             var carOffers = this.carOffersService
                  .GetAll()
                  .Where(x => x.Image.Count != 0)
+                 .Where(x => x.IsDeleted == false)
                  .MapTo<CarOfferViewModel>()
                  .ToList();
 
@@ -60,6 +61,7 @@ namespace Autos4Sale.Web.Controllers
             var yourCarOffers = this.carOffersService
             .GetAll()
             .Where(x => x.Author.Id == currentUser.Id)
+            .Where(x => x.IsDeleted == false)
             .MapTo<CarOfferViewModel>()
             .ToList();
 

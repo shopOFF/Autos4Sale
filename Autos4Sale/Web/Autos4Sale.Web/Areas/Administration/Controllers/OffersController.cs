@@ -31,6 +31,7 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
 
             var carOffers = this.carOffersService
             .GetAll()
+            .Where(x => x.IsDeleted == false)
             .MapTo<CarOfferViewModel>()
             .ToList();
 
