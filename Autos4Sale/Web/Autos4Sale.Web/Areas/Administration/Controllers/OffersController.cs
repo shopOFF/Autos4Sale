@@ -6,11 +6,11 @@ using System.Web.Mvc;
 
 namespace Autos4Sale.Web.Areas.Administration.Controllers
 {
-    public class EditOffersController : Controller
+    public class OffersController : Controller
     {
         [HttpGet]
         [Authorize(Roles = "Admin")]
-        public ActionResult AdminEditOffer()
+        public ActionResult EditOffer()
         {
             return View();
         }
