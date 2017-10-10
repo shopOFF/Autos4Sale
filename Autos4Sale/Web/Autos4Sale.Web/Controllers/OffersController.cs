@@ -50,7 +50,7 @@ namespace Autos4Sale.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult YourOffers()
         {
             var currentUser = this.userService.ReturnCurrentUser();
