@@ -1,4 +1,6 @@
 # Autos4Sale
+## Build Status
+[![Build status](https://ci.appveyor.com/api/projects/status/oc79c9qrcxtipfhq?svg=true)](https://ci.appveyor.com/project/shopOFF/autos4sale)
 
 # ASP.NET MVC Final Project
 
