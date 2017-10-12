@@ -16,7 +16,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
     public class YourOffers_Should
     {
         [TestCase]
-        public void YourOffers_WhenValidParametersArePased_ShouldReturnCorerectViewResultName()
+        public void YourOffers_WhenInValidParametersArePased_ShouldThrowNullReferenceException()
         {
             // Arrange
             var autoMapperConfig = new AutoMapperConfig();
@@ -31,11 +31,26 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             var userServiceMock = new Mock<IUserService>();
             OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
-            // Act
-            ViewResult result = offersController.AllCars() as ViewResult;
+            // Act & Assert
+            Assert.Throws<NullReferenceException>(() => offersController.YourOffers());
+        }
 
-            // Assert
-            Assert.AreEqual(string.Empty, result.ViewName);
+        [TestCase]
+        public void YourOffers_WhenInValidGetAllParamIsPased_ShouldReturnNull()
+        {
+            // Arrange
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(typeof(OffersController).Assembly);
+            var userServiceMock = new Mock<IUserService>();
+            var carOffer = new CarOffer();
+
+            var carOffersServiceMock = new Mock<ICarOffersService>();
+            carOffersServiceMock.Setup(x => x.GetAll())
+                .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
+           
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
+            // Act & Assert
+            Assert.Throws<NullReferenceException>(() => offersController.YourOffers());
         }
     }
 }
