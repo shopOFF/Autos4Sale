@@ -2,14 +2,11 @@
 using Autos4Sale.Services.Contracts;
 using Autos4Sale.Web.App_Start;
 using Autos4Sale.Web.Controllers;
-using Autos4Sale.Web.ViewModels.Shared;
 using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using TestStack.FluentMVCTesting;
 
@@ -26,6 +23,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             autoMapperConfig.Execute(typeof(OffersController).Assembly);
 
             var carOffer = new CarOffer();
+            var guid = Guid.NewGuid();
 
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
@@ -35,7 +33,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act
-            ViewResult result = offersController.AllCars() as ViewResult;
+            ViewResult result = offersController.Details(guid) as ViewResult;
 
             // Assert
             Assert.AreEqual(string.Empty, result.ViewName);
