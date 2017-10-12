@@ -1,5 +1,4 @@
 ﻿using System;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Autos4Sale.Services.Contracts;
 using Autos4Sale.Web.Areas.Administration.Controllers;
