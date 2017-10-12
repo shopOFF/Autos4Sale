@@ -215,7 +215,6 @@
     <Compile Include="Areas\Administration\ViewModels\EditableCarOfferViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\OffersController.cs" />
-    <Compile Include="Controllers\HideController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -303,7 +302,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Hide\Test.cshtml" />
     <Content Include="Views\Upload\Upload.cshtml" />
     <Content Include="Views\Offers\AllCars.cshtml" />
     <Content Include="Views\Offers\Details.cshtml" />
