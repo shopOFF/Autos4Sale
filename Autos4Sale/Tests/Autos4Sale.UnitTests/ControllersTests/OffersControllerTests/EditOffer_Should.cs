@@ -40,5 +40,48 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             // Assert
             Assert.AreEqual(string.Empty, result.ViewName);
         }
+
+        [TestCase]
+        public void EditOffer_WhenValidParametersArePased_ShouldCallUpdateMethod()
+        {
+            // Arrange
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(typeof(OffersController).Assembly);
+
+            var carOffer = new CarOffer();
+
+            var carOffersServiceMock = new Mock<ICarOffersService>();
+            carOffersServiceMock.Setup(x => x.Update(carOffer)).Verifiable();
+            carOffersServiceMock.Object.Update(carOffer);
+
+            var userServiceMock = new Mock<IUserService>();
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
+            var editableCarOfferViewModel = new EditableCarOfferViewModel();
+            // Act
+            ViewResult result = offersController.EditOffer(editableCarOfferViewModel) as ViewResult;
+
+            // Assert
+            carOffersServiceMock.Verify(x => x.Update(carOffer), Times.Once);
+        }
+
+        [TestCase]
+        public void EditOffer_WhenInValidIdIsPased_ShouldRedirectToHomeViewRoute()
+        {
+            // Arrange
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(typeof(OffersController).Assembly);
+
+            var carOffer = new CarOffer();
+            var carOffersServiceMock = new Mock<ICarOffersService>();
+            carOffersServiceMock.Setup(x => x.Update(carOffer)).Verifiable();
+            carOffersServiceMock.Object.Update(carOffer);
+
+            var userServiceMock = new Mock<IUserService>();
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
+            var editableCarOfferViewModel = new EditableCarOfferViewModel();
+
+            // Act & Assert
+            offersController.WithCallTo(x => x.EditOffer(editableCarOfferViewModel)).ShouldRedirectToRoute(string.Empty);
+        }
     }
 }
