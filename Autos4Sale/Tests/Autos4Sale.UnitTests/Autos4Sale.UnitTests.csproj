@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="ControllersTests\OffersControllerTests\AllCars_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Constructor_Should.cs" />
+    <Compile Include="ControllersTests\OffersControllerTests\Details_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

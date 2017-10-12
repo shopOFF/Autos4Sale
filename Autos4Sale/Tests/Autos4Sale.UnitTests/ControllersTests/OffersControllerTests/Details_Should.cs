@@ -16,10 +16,10 @@ using TestStack.FluentMVCTesting;
 namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
 {
     [TestFixture]
-    public class AllCars_Should
+    public class Details_Should
     {
         [TestCase]
-        public void AllCars_WhenValidParametersArePased_ShouldReturnCorerectViewResultName()
+        public void Details_WhenValidParametersArePased_ShouldReturnCorerectViewResultName()
         {
             // Arrange
             var autoMapperConfig = new AutoMapperConfig();
@@ -42,14 +42,14 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
         }
 
         [TestCase]
-        public void AllCars_WhenValidParametersArePased_ShouldReturnCorerectViewAllCars()
+        public void Details_WhenValidParametersArePased_ShouldReturnCorerectViewDetails()
         {
             // Arrange
             var autoMapperConfig = new AutoMapperConfig();
             autoMapperConfig.Execute(typeof(OffersController).Assembly);
 
             var carOffer = new CarOffer();
-
+            var guid = Guid.NewGuid();
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
@@ -58,11 +58,11 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act & Assert
-            offersController.WithCallTo(x => x.AllCars()).ShouldRenderView("AllCars");
+            offersController.WithCallTo(x => x.Details(guid)).ShouldRenderView("Details");
         }
 
         [TestCase]
-        public void AllCars_WhenValidParametersArePased_ShouldReturnCorerectViewModelToView()
+        public void Details_WhenInValidIdIsPased_ShouldRedirectToHomeControllerRoute()
         {
             // Arrange
             var autoMapperConfig = new AutoMapperConfig();
@@ -73,12 +73,12 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
-
+            var guid = Guid.NewGuid();
             var userServiceMock = new Mock<IUserService>();
             OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act & Assert
-            offersController.WithCallTo(x => x.AllCars()).ShouldRenderDefaultView().WithModel<List<CarOfferViewModel>>();
+            offersController.WithCallTo(x => x.Details(null)).ShouldRedirectToRoute(string.Empty);
         }
     }
 }
