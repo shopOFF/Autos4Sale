@@ -84,6 +84,8 @@
     <Compile Include="ControllersTests\OffersControllerTests\Details_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\EditOffer_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\YourOffers_Should.cs" />
+    <Compile Include="ControllersTests\UploadControllerTests\Constructor_Should.cs" />
+    <Compile Include="ControllersTests\UploadControllerTests\Upload_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
