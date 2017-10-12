@@ -16,7 +16,7 @@ namespace Autos4Sale.UnitTests
             // Arrange
             var carOffersServiceMock = new Mock<ICarOffersService>();
             var userServiceMock = new Mock<IUserService>();
-
+            //
             // Act
             OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
 
