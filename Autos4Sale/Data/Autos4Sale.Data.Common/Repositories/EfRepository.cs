@@ -35,16 +35,6 @@ namespace Autos4Sale.Data.Common.Repositories
             }
         }
 
-        public T GetById(object id)
-        {
-            return this.dbContext.Set<T>().Find(id);
-        }
-
-        public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
-        {
-            return this.dbContext.Set<T>().Where(predicate);
-        }
-
         public void Add(T entity)
         {
             DbEntityEntry entry = this.dbContext.Entry(entity);

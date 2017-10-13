@@ -118,6 +118,10 @@
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\DeleteOffer_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\EditOffer_Should.cs" />
+    <Compile Include="ControllersTests\HomeControllerTests\About_Should.cs" />
+    <Compile Include="ControllersTests\HomeControllerTests\Constructor_Should.cs" />
+    <Compile Include="ControllersTests\HomeControllerTests\Contact_Should.cs" />
+    <Compile Include="ControllersTests\HomeControllerTests\Index_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\AllCars_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Details_Should.cs" />
@@ -125,6 +129,8 @@
     <Compile Include="ControllersTests\OffersControllerTests\YourOffers_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Upload_Should.cs" />
+    <Compile Include="DataModelsTests\ImageTests\Image_Should.cs" />
+    <Compile Include="DataModelsTests\UserTests\User_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesTests\CarOffersServiceTests\Add_Should.cs" />
     <Compile Include="ServicesTests\CarOffersServiceTests\Constructor_Should.cs" />

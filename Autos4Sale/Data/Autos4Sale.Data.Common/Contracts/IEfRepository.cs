@@ -10,8 +10,6 @@ namespace Autos4Sale.Data.Common.Contracts
     {
         IQueryable<T> GetAll { get; }
         IQueryable<T> GetAllAndDeleted { get; }
-        T GetById(object id);
-        IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         void Add(T entity);
         void Delete(T entity);
         void Update(T entity);
