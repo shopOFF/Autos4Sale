@@ -20,6 +20,11 @@ namespace Autos4Sale.Services
 
         public ImageService(IEfRepository<User> usersRepo)
         {
+            if (usersRepo == null)
+            {
+                throw new ArgumentNullException("UsersRepo can not be null!");
+            }
+
             this.usersRepo = usersRepo;
             this.currentUserId= HttpContext.Current.User.Identity.GetUserId();
             this.currentUser= this.usersRepo.GetAll.Where(x => x.Id == this.currentUserId).FirstOrDefault();

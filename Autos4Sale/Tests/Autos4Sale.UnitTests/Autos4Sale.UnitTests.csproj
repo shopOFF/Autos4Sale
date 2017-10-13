@@ -126,6 +126,17 @@
     <Compile Include="ControllersTests\UploadControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Upload_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesTests\CarOffersServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\CarOffersServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\CarOffersServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\CarOffersServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\CarOffersServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\EmailServiceTests\SendAsync_Should.cs" />
+    <Compile Include="ServicesTests\ImageServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\ImageServiceTests\SaveImages_Should.cs" />
+    <Compile Include="ServicesTests\SmsServiceTests\SendAsync_Should.cs" />
+    <Compile Include="ServicesTests\UserServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\UserServiceTests\ReturnCurrentUser_Should.cs" />
     <Compile Include="ViewModelsTests\AccountViewModelsTests\ExternalLoginConfirmationViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\AccountViewModelsTests\ExternalLoginListViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\AccountViewModelsTests\ForgotPasswordViewModel_Should.cs" />
@@ -151,6 +162,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Autos4Sale.Services.Web\Autos4Sale.Services.Web.csproj">
+      <Project>{3071FE36-2AC5-4C0B-84DC-CF49CCBD5301}</Project>
+      <Name>Autos4Sale.Services.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Autos4Sale.Data.Common\Autos4Sale.Data.Common.csproj">
+      <Project>{DD14861B-3508-4015-832E-2E0002B9B16F}</Project>
+      <Name>Autos4Sale.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\Autos4Sale.Data.Models\Autos4Sale.Data.Models.csproj">
       <Project>{280798CB-7923-404F-90BB-E890B732D781}</Project>
       <Name>Autos4Sale.Data.Models</Name>
@@ -167,6 +186,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

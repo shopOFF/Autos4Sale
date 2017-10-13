@@ -16,6 +16,11 @@ namespace Autos4Sale.Services
 
         public CarOffersService(IEfRepository<CarOffer> carOffersRepo, IEfUnitOfWork dbContext)
         {
+            if (carOffersRepo == null || dbContext == null)
+            {
+                throw new ArgumentNullException("CarOffersRepo and dbContext can not be null!");
+            }
+
             this.carOffersRepo = carOffersRepo;
             this.dbContext = dbContext;
         }
