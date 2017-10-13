@@ -113,6 +113,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControllersTests\AdministrationOffersControllerTests\AdminAreaRegistration_Should.cs" />
+    <Compile Include="ControllersTests\AdministrationOffersControllerTests\AllOffers_Should.cs" />
+    <Compile Include="ControllersTests\AdministrationOffersControllerTests\Constructor_Should.cs" />
+    <Compile Include="ControllersTests\AdministrationOffersControllerTests\DeleteOffer_Should.cs" />
+    <Compile Include="ControllersTests\AdministrationOffersControllerTests\EditOffer_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\AllCars_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Details_Should.cs" />

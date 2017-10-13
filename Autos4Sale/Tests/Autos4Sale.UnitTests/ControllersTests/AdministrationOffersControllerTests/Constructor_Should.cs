@@ -1,14 +1,13 @@
 ﻿using Autos4Sale.Services.Contracts;
-using Autos4Sale.Web.Controllers;
+using Autos4Sale.Web.Areas.Administration.Controllers;
 using Moq;
 using NUnit.Framework;
 
-namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
+namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTests
 {
     [TestFixture]
     public class Constructor_Should
     {
-
         [TestCase]
         public void OffersConstructor_WhenValidParametersArePased_ShouldNotBeNull()
         {
@@ -17,7 +16,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             var userServiceMock = new Mock<IUserService>();
             //
             // Act
-            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
+            OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
 
             // Assert
             Assert.IsNotNull(offersController);
