@@ -122,6 +122,10 @@
     <Compile Include="ControllersTests\HomeControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\HomeControllerTests\Contact_Should.cs" />
     <Compile Include="ControllersTests\HomeControllerTests\Index_Should.cs" />
+    <Compile Include="ControllersTests\ManageControllerTests\ChangePassword_Should.cs" />
+    <Compile Include="ControllersTests\ManageControllerTests\Constructor_Should.cs" />
+    <Compile Include="ControllersTests\ManageControllerTests\AddPhoneNumber_Should.cs" />
+    <Compile Include="ControllersTests\ManageControllerTests\SetPassword_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\AllCars_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\OffersControllerTests\Details_Should.cs" />
@@ -129,6 +133,9 @@
     <Compile Include="ControllersTests\OffersControllerTests\YourOffers_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Upload_Should.cs" />
+    <Compile Include="DataCommontTests\EfRepositoryTests\Constructor_Should.cs" />
+    <Compile Include="DataCommontTests\EfUnitOfWorkTests\Commit_Should.cs" />
+    <Compile Include="DataCommontTests\EfUnitOfWorkTests\Constructor_Should.cs" />
     <Compile Include="DataModelsTests\ImageTests\Image_Should.cs" />
     <Compile Include="DataModelsTests\UserTests\User_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,9 +203,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataLayerTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

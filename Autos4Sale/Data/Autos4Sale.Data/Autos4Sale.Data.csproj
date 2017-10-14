@@ -54,26 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autos4SaleDbContext.cs" />
-    <Compile Include="Migrations\201710040903495_initial.cs" />
-    <Compile Include="Migrations\201710040903495_initial.Designer.cs">
-      <DependentUpon>201710040903495_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710040936356_make renamed to brand.cs" />
-    <Compile Include="Migrations\201710040936356_make renamed to brand.Designer.cs">
-      <DependentUpon>201710040936356_make renamed to brand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710051616487_context up.cs" />
-    <Compile Include="Migrations\201710051616487_context up.Designer.cs">
-      <DependentUpon>201710051616487_context up.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710051626275_up on context.cs" />
-    <Compile Include="Migrations\201710051626275_up on context.Designer.cs">
-      <DependentUpon>201710051626275_up on context.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710081108458_fix dbcontext bug.cs" />
-    <Compile Include="Migrations\201710081108458_fix dbcontext bug.Designer.cs">
-      <DependentUpon>201710081108458_fix dbcontext bug.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201710081124327_up on user.cs" />
     <Compile Include="Migrations\201710081124327_up on user.Designer.cs">
       <DependentUpon>201710081124327_up on user.cs</DependentUpon>
@@ -92,21 +72,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710040903495_initial.resx">
-      <DependentUpon>201710040903495_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040936356_make renamed to brand.resx">
-      <DependentUpon>201710040936356_make renamed to brand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710051616487_context up.resx">
-      <DependentUpon>201710051616487_context up.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710051626275_up on context.resx">
-      <DependentUpon>201710051626275_up on context.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710081108458_fix dbcontext bug.resx">
-      <DependentUpon>201710081108458_fix dbcontext bug.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710081124327_up on user.resx">
       <DependentUpon>201710081124327_up on user.cs</DependentUpon>
     </EmbeddedResource>
