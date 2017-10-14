@@ -129,7 +129,6 @@
     <Compile Include="ControllersTests\OffersControllerTests\YourOffers_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Upload_Should.cs" />
-    <Compile Include="DataLayerTests\Autos4SaleDbContextTests\Autos4SaleDbContext_Should.cs" />
     <Compile Include="DataModelsTests\ImageTests\Image_Should.cs" />
     <Compile Include="DataModelsTests\UserTests\User_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,7 +196,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataLayerTests\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
