@@ -129,6 +129,7 @@
     <Compile Include="ControllersTests\OffersControllerTests\YourOffers_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\UploadControllerTests\Upload_Should.cs" />
+    <Compile Include="DataLayerTests\Autos4SaleDbContextTests\Autos4SaleDbContext_Should.cs" />
     <Compile Include="DataModelsTests\ImageTests\Image_Should.cs" />
     <Compile Include="DataModelsTests\UserTests\User_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +180,10 @@
     <ProjectReference Include="..\..\Data\Autos4Sale.Data.Models\Autos4Sale.Data.Models.csproj">
       <Project>{280798CB-7923-404F-90BB-E890B732D781}</Project>
       <Name>Autos4Sale.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Autos4Sale.Data\Autos4Sale.Data.csproj">
+      <Project>{f1307aef-8d8c-44f1-9249-cea6e6b7d4a2}</Project>
+      <Name>Autos4Sale.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Autos4Sale.Services\Autos4Sale.Services.csproj">
       <Project>{787E8868-7F94-4E83-A028-B051640E1DFE}</Project>
