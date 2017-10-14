@@ -2,6 +2,8 @@
 ## Build Status
 [![Build status](https://ci.appveyor.com/api/projects/status/oc79c9qrcxtipfhq?svg=true)](https://ci.appveyor.com/project/shopOFF/autos4sale)
 
+[![Coverage Status](https://coveralls.io/repos/github/shopOFF/Autos4Sale/badge.svg?branch=master)](https://coveralls.io/github/shopOFF/Autos4Sale?branch=master)
+
 # ASP.NET MVC Final Project
 
 This document describes the **final project assignment** for the **ASP.NET MVC** course at Telerik Academy.
