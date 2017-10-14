@@ -17,8 +17,10 @@ namespace Autos4Sale.Data.Models
 
         public virtual User Author { get; set; }
 
+        [MaxLength(50)]
         public string Brand { get; set; }
 
+        [MaxLength(50)]
         public string Model { get; set; }
 
         public int YearManufacured { get; set; }
@@ -33,14 +35,17 @@ namespace Autos4Sale.Data.Models
 
         public int HorsePower { get; set; }
 
+        [MaxLength(50)]
         public string Description { get; set; }
 
         public int Price { get; set; }
 
+        [MaxLength(50)]
         public string SellersCurrentPhone { get; set; }
 
         public ColorType Color { get; set; }
 
+        [MaxLength(150)]
         public string Location { get; set; }
 
         public virtual ICollection<Image> Image

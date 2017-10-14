@@ -7,13 +7,13 @@ namespace Autos4Sale.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class uponuser : IMigrationMetadata
+    public sealed partial class modelsupdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(uponuser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(modelsupdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710081124327_up on user"; }
+            get { return "201710141521092_models update"; }
         }
         
         string IMigrationMetadata.Source

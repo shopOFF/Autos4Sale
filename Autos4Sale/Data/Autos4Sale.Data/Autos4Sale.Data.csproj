@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autos4SaleDbContext.cs" />
-    <Compile Include="Migrations\201710081124327_up on user.cs" />
-    <Compile Include="Migrations\201710081124327_up on user.Designer.cs">
-      <DependentUpon>201710081124327_up on user.cs</DependentUpon>
+    <Compile Include="Migrations\201710141521092_models update.cs" />
+    <Compile Include="Migrations\201710141521092_models update.Designer.cs">
+      <DependentUpon>201710141521092_models update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710081124327_up on user.resx">
-      <DependentUpon>201710081124327_up on user.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710141521092_models update.resx">
+      <DependentUpon>201710141521092_models update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
