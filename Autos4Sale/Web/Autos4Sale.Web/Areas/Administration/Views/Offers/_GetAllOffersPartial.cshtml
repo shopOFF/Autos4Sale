@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Autos4Sale.Web.ViewModels.Shared.CarOfferViewModel>
+
+@{
+    ViewBag.Title = "_GetAllOffersPartial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-container">
+    @{
+        if (Model.Count() < 1)
+        {
+            <h1>No Offers To Display</h1>
+        }
+        else
+        {
+            <h2>Admin: Display All Offers</h2>
+            <hr />
+            foreach (var offer in Model)
+            {
+                <a href="@Url.Action("Details", "Offers", new { id = offer.Id, Area=string.Empty })" class="details-link">
+                    <div class="well">
+                        <div class="img-container">
+                            @{
+                                var item = offer.Image.FirstOrDefault();
+                            }
+                            <tr>
+                                <td><img src="~/Images/@item.ImageUrl" class="img-thumbnail" /></td>
+                            </tr>
+                        </div>
+                        <div class="text-container">
+                            <h4><strong>@offer.Brand @offer.Model</strong></h4>
+                            <h4 class="price"><strong>€@offer.Price</strong></h4>
+                            <h5><strong>Year Manufactured:</strong> @offer.YearManufacured</h5>
+                            <h5><strong>Date Added:</strong> @offer.ModifiedOn</h5>
+                        </div>
+                    </div>
+                </a>
+                <input type="button" class="btn btn-default" id="edit-btn" value="Edit" onclick="@("window.location.href='" + @Url.Action("EditOffer","Offers", new { id = offer.Id }) + "'");" />
+                <input type="button" class="btn btn-default" id="edit-btn" value="Delete" onclick="@("window.location.href='" + @Url.Action("DeleteOffer","Offers", new { id = offer.Id }) + "'");" />
+            }
+        }
+    }
+</div>

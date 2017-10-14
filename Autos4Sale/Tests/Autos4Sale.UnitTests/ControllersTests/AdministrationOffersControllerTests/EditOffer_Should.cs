@@ -31,8 +31,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
 
-            var userServiceMock = new Mock<IUserService>();
-            OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object);
 
             // Act
             ViewResult result = offersController.EditOffer(guid) as ViewResult;
@@ -54,9 +53,9 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
             carOffersServiceMock.Setup(x => x.Update(carOffer)).Verifiable();
             carOffersServiceMock.Object.Update(carOffer);
 
-            var userServiceMock = new Mock<IUserService>();
-            OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object);
             var editableCarOfferViewModel = new EditableCarOfferViewModel();
+
             // Act
             ViewResult result = offersController.EditOffer(editableCarOfferViewModel) as ViewResult;
 
@@ -76,8 +75,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
             carOffersServiceMock.Setup(x => x.Update(carOffer)).Verifiable();
             carOffersServiceMock.Object.Update(carOffer);
 
-            var userServiceMock = new Mock<IUserService>();
-            OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object);
             var editableCarOfferViewModel = new EditableCarOfferViewModel();
 
             // Act & Assert

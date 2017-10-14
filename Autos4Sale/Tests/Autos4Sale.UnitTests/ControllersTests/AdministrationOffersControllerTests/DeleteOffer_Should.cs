@@ -33,8 +33,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
 
             carOffersServiceMock.Setup(x => x.Delete(carOffer));
 
-            var userServiceMock = new Mock<IUserService>();
-            OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object);
 
             // Act
             carOffersServiceMock.Object.Delete(carOffer);
@@ -59,8 +58,7 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
 
             carOffersServiceMock.Setup(x => x.Delete(carOffer));
 
-            var userServiceMock = new Mock<IUserService>();
-            OffersController offersController = new OffersController(userServiceMock.Object, carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object);
 
             // Act
             ViewResult result = offersController.DeleteOffer(guid) as ViewResult;

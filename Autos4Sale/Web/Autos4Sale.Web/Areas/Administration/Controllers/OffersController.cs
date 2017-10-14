@@ -14,12 +14,10 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
 {
     public class OffersController : Controller
     {
-        private readonly IUserService userService;
         private readonly ICarOffersService carOffersService;
 
-        public OffersController(IUserService userService, ICarOffersService carOffersService)
+        public OffersController(ICarOffersService carOffersService)
         {
-            this.userService = userService;
             this.carOffersService = carOffersService;
         }
 
@@ -27,15 +25,22 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult AllOffers()
         {
-            var currentUser = this.userService.ReturnCurrentUser();
+            return View();
+        }
 
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [OutputCache(Duration = 13)]  // cached for 13 seconds
+        public ActionResult GetAllOffers()
+        {
             var carOffers = this.carOffersService
-            .GetAll()
-            .Where(x => x.IsDeleted == false)
-            .MapTo<CarOfferViewModel>()
-            .ToList();
+                 .GetAll()
+                 .Where(x => x.Image.Count != 0)
+                 .Where(x => x.IsDeleted == false)
+                 .MapTo<CarOfferViewModel>()
+                 .ToList();
 
-            return View(carOffers);
+            return PartialView("_GetAllOffersPartial", carOffers);
         }
 
         [HttpGet]

@@ -38,7 +38,7 @@ Your Web application should use the following technologies, frameworks and devel
 	* You may use any JavaScript library of your choice
 		* For example Kendo UI widgets (with the ASP.NET MVC Wrappers), Chart.js for charts, etc.
 	* ASP.NET WebForms is not allowed
-	* Use **sections** and **partial views**
+	* [x] Use **sections** and **partial views**
 	* [x] Use **editor** and/or **display** templates
 * [x] Use **MS SQL Server** as database back-end
 	* [x] Use **Entity Framework 6** to access your database
@@ -52,7 +52,7 @@ Your Web application should use the following technologies, frameworks and devel
 * [x] Use the standard **ASP.NET Identity System** for managing users and roles
 	* [x] Your registered users should have at least one of the two roles: **user** and **administrator**
 * Use **AJAX form and/or SignalR** communication in some parts of your application
-* Use **caching** of data where it makes sense (e.g. starting page)
+* [x] Use **caching** of data where it makes sense (e.g. starting page)
 * [x] Apply **error handling** and **data validation** to avoid crashes when invalid data is entered (both client-side and server-side)
 * [x] Prevent yourself from **security** holes (XSS, XSRF, Parameter Tampering, etc.)
 	* [x] Handle correctly the **special HTML characters** and tags like `<script>`, `<br />`, etc.

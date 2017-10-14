@@ -25,6 +25,13 @@ namespace Autos4Sale.Web.Controllers
         [HttpGet]
         public ActionResult AllCars()
         {
+            return View();
+        }
+
+        [HttpGet]
+        [OutputCache(Duration = 13)]  // cached for 13 seconds
+        public ActionResult GetAllCars()
+        {
             var carOffers = this.carOffersService
                  .GetAll()
                  .Where(x => x.Image.Count != 0)
@@ -32,7 +39,7 @@ namespace Autos4Sale.Web.Controllers
                  .MapTo<CarOfferViewModel>()
                  .ToList();
 
-            return View(carOffers);
+            return PartialView("_GetAllCarsPartial", carOffers);
         }
 
         [HttpGet]

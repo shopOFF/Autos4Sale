@@ -257,6 +257,7 @@
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\Offers\EditOffer.cshtml" />
     <Content Include="Areas\Administration\Views\Offers\AllOffers.cshtml" />
+    <Content Include="Areas\Administration\Views\Offers\_GetAllOffersPartial.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -307,6 +308,7 @@
     <Content Include="Views\Offers\Details.cshtml" />
     <Content Include="Views\Offers\YourOffers.cshtml" />
     <Content Include="Views\Offers\EditOffer.cshtml" />
+    <Content Include="Views\Offers\_GetAllCarsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
