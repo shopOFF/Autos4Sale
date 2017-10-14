@@ -45,6 +45,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        <div id="contacts">
+            @RenderSection("contacts", required: false)
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Autos4Sale Web App</p>
