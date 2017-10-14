@@ -320,10 +320,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Autos4Sale.Services.Web\Autos4Sale.Services.Web.csproj">
-      <Project>{3071FE36-2AC5-4C0B-84DC-CF49CCBD5301}</Project>
-      <Name>Autos4Sale.Services.Web</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Data\Autos4Sale.Data.Common\Autos4Sale.Data.Common.csproj">
       <Project>{DD14861B-3508-4015-832E-2E0002B9B16F}</Project>
       <Name>Autos4Sale.Data.Common</Name>
@@ -335,6 +331,10 @@
     <ProjectReference Include="..\..\Data\Autos4Sale.Data\Autos4Sale.Data.csproj">
       <Project>{F1307AEF-8D8C-44F1-9249-CEA6E6B7D4A2}</Project>
       <Name>Autos4Sale.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Autos4Sale.Services.Web\Autos4Sale.Services.Web.csproj">
+      <Project>{533DC57E-3DFC-4886-A5E5-D5E2E7AF8333}</Project>
+      <Name>Autos4Sale.Services.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Autos4Sale.Services\Autos4Sale.Services.csproj">
       <Project>{787E8868-7F94-4E83-A028-B051640E1DFE}</Project>

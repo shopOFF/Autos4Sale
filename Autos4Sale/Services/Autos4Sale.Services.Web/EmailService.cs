@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Threading.Tasks;
 
-namespace Autos4Sale.Services.Services.Web
+namespace Autos4Sale.Services.Web
 {
     public class EmailService : IIdentityMessageService
     {
