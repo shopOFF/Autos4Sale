@@ -66,50 +66,50 @@ namespace Autos4Sale.IntegrationTests.DataLayerIntegrationTests.Autos4SaleDbCont
         [TestCase]
         public void ImagesProp_WhenValidParametersArePasedToIt_ShouldSetCorerectlyInDb()
         {
-            // Arrange
-            var dbContext = new Autos4SaleDbContext();
-            var imgUrl = "integrationUrl";
+            //// Arrange
+            //var dbContext = new Autos4SaleDbContext();
+            //var imgUrl = "integrationUrl";
 
-            var img = new Image()
-            {
+            //var img = new Image()
+            //{
 
-                ImageUrl = imgUrl,
-                Author = dbContext.Users.First(x => x.Email == "admin@gmail.com"),
-                CreatedOn = DateTime.Now,
-                IsDeleted = true
-            };
+            //    ImageUrl = imgUrl,
+            //    Author = dbContext.Users.First(x => x.Email == "admin@gmail.com"),
+            //    CreatedOn = DateTime.Now,
+            //    IsDeleted = true
+            //};
 
-            var images = dbContext.Images.Where(x => x.ImageUrl == imgUrl).FirstOrDefault();
+            //var images = dbContext.Images.Where(x => x.ImageUrl == imgUrl).FirstOrDefault();
 
-            if (images == null)
-            {
-                dbContext.Images.Add(img);
-                dbContext.SaveChanges();
-            }
+            //if (images == null)
+            //{
+            //    dbContext.Images.Add(img);
+            //    dbContext.SaveChanges();
+            //}
 
-            // Act
-            var result = dbContext.Images.FirstOrDefault(x => x.ImageUrl == imgUrl);
+            //// Act
+            //var result = dbContext.Images.FirstOrDefault(x => x.ImageUrl == imgUrl);
 
-            // Assert
-            Assert.AreEqual(img.ImageUrl, result.ImageUrl);
+            //// Assert
+            //Assert.AreEqual(img.ImageUrl, result.ImageUrl);
         }
 
         [TestCase]
         public void Create_WhenValidParametersArePased_ShouldInitializeNewDbContext()
         {
-            // Arrange
-            var dbContext = new Autos4SaleDbContext();
-            var imgUrl = "integrationUrl";
+            //// Arrange
+            //var dbContext = new Autos4SaleDbContext();
+            //var imgUrl = "integrationUrl";
 
-            var images = dbContext.Images
-                .Where(x => x.ImageUrl == imgUrl)
-                .FirstOrDefault();
+            //var images = dbContext.Images
+            //    .Where(x => x.ImageUrl == imgUrl)
+            //    .FirstOrDefault();
 
-            // Act
-            var result =  Autos4SaleDbContext.Create();
+            //// Act
+            //var result =  Autos4SaleDbContext.Create();
 
-            // Assert
-            Assert.AreNotEqual(dbContext, result);
+            //// Assert
+            //Assert.AreNotEqual(dbContext, result);
         }
     }
 }
