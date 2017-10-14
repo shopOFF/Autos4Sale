@@ -17,13 +17,13 @@ namespace Autos4Sale.UnitTests.ServicesTests.UserServiceTests
             // Arrange
             var user = new User();
             var userServiceMock = new Mock<IUserService>();
-            userServiceMock.Setup(x => x.ReturnCurrentUser()).Returns(user);
+            userServiceMock.Setup(x => x.ReturnCurrentUser(null,null)).Returns(user);
 
             // Act
             userServiceMock.Object.ReturnCurrentUser();
 
             // Assert
-            userServiceMock.Verify(x => x.ReturnCurrentUser(), Times.Once);
+            userServiceMock.Verify(x => x.ReturnCurrentUser(null,null), Times.Once);
         }
     }
 }

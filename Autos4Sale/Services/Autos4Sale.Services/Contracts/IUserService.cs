@@ -4,6 +4,6 @@ namespace Autos4Sale.Services.Contracts
 {
     public interface IUserService
     {
-        User ReturnCurrentUser();
+        User ReturnCurrentUser(string currUserId = null, User currUser = null);
     }
 }

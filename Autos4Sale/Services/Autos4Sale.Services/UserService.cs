@@ -11,8 +11,8 @@ namespace Autos4Sale.Services
     public class UserService : IUserService
     {
         private readonly IEfRepository<User> usersRepo;
-        private readonly string currentUserId;
-        private readonly User currentUser;
+        private string currentUserId;
+        private User currentUser;
 
         public UserService(IEfRepository<User> usersRepo)
         {
@@ -22,12 +22,45 @@ namespace Autos4Sale.Services
             }
 
             this.usersRepo = usersRepo;
-            this.currentUserId = HttpContext.Current.User.Identity.GetUserId();
-            this.currentUser = this.usersRepo.GetAll.Where(x => x.Id == this.currentUserId).FirstOrDefault();
         }
 
-        public User ReturnCurrentUser()
+        public string CurrentUserId
         {
+            get { return this.currentUserId; }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    this.currentUserId = HttpContext.Current.User.Identity.GetUserId();
+                }
+                else
+                {
+                    this.currentUserId = value;
+                }
+            }
+        }
+
+        public User CurrentUser
+        {
+            get { return this.currentUser; }
+            private set
+            {
+                if (value == null)
+                {
+                    this.currentUser = this.usersRepo.GetAll.Where(x => x.Id == this.currentUserId).FirstOrDefault();
+                }
+                else
+                {
+                    this.currentUser = value;
+                }
+            }
+        }
+
+        public User ReturnCurrentUser(string currUserId = null, User currUser = null)
+        {
+            this.CurrentUserId = currUserId;
+            this.CurrentUser = currUser;
+
             return this.currentUser;
         }
     }
