@@ -86,30 +86,35 @@ namespace Autos4Sale.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditOffer(EditableCarOfferViewModel offer)
         {
-            var carOffer = new CarOffer()
+            if (this.ModelState.IsValid)
             {
-                Id = offer.Id,
-                Author = offer.Author,
-                Brand = offer.Brand,
-                Model = offer.Model,
-                Description = offer.Description,
-                Image = offer.Image,
-                Color = offer.Color,
-                Engine = offer.Engine,
-                CreatedOn = DateTime.Now,
-                Transmission = offer.Transmission,
-                CarCategory = offer.CarCategory,
-                Mileage = offer.Mileage,
-                HorsePower = offer.HorsePower,
-                Location = offer.Location,
-                Price = offer.Price,
-                SellersCurrentPhone = offer.SellersCurrentPhone,
-                YearManufacured = offer.YearManufacured
-            };
+                var carOffer = new CarOffer()
+                {
+                    Id = offer.Id,
+                    Author = offer.Author,
+                    Brand = offer.Brand,
+                    Model = offer.Model,
+                    Description = offer.Description,
+                    Image = offer.Image,
+                    Color = offer.Color,
+                    Engine = offer.Engine,
+                    CreatedOn = DateTime.Now,
+                    Transmission = offer.Transmission,
+                    CarCategory = offer.CarCategory,
+                    Mileage = offer.Mileage,
+                    HorsePower = offer.HorsePower,
+                    Location = offer.Location,
+                    Price = offer.Price,
+                    SellersCurrentPhone = offer.SellersCurrentPhone,
+                    YearManufacured = offer.YearManufacured
+                };
 
-            this.carOffersService.Update(carOffer);
+                this.carOffersService.Update(carOffer);
 
-            return RedirectToAction("AllCars", "Offers");
+                return RedirectToAction("AllCars", "Offers");
+            }
+
+            return View();
         }
     }
 }

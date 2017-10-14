@@ -83,7 +83,6 @@ namespace Autos4Sale.Web.ViewModels.Shared
 
         public DateTime ModifiedOn { get; set; }
 
-        [FileExtensions(Extensions = "jpg,jpeg,png,bmp", ErrorMessage = "Please select an Image file!")]
         public ICollection<Image> Image
         {
             get { return this.image; }

@@ -83,7 +83,6 @@ namespace Autos4Sale.Web.Areas.Administration.ViewModels
         [StringLength(70, ErrorMessage = "Seller's Location can be no larger than 70 characters!")]
         public string Location { get; set; }
 
-        [FileExtensions(Extensions = "jpg,jpeg,png,bmp", ErrorMessage = "Please select an Image file!")]
         [ScaffoldColumn(false)]
         public ICollection<Image> Image
         {

@@ -40,45 +40,48 @@ namespace Autos4Sale.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Upload(CarOfferViewModel offer, IEnumerable<HttpPostedFileBase> images)
         {
-            if (!images.Contains(null))
+            if (this.ModelState.IsValid)
             {
-                string[] allowedFileExtensions = new string[] { ".jpg", ".jpeg", ".png", ".bmp" };
-
-                foreach (var image in images)
+                if (!images.Contains(null))
                 {
-                    if (!allowedFileExtensions.Contains(image.FileName.Substring(image.FileName.LastIndexOf('.'))))
+                    string[] allowedFileExtensions = new string[] { ".jpg", ".jpeg", ".png", ".bmp" };
+
+                    foreach (var image in images)
                     {
-                        return View(); // make e default page if something is wrong
+                        if (!allowedFileExtensions.Contains(image.FileName.Substring(image.FileName.LastIndexOf('.'))))
+                        {
+                            return View(); // make e default page if something is wrong
+                        }
                     }
+
+                    var imgs = this.imageService.SaveImages(images);
+
+                    //var mappedOffer= Mapper.Map<CarOfferViewModel, CarOffer>(offer);
+
+                    var carOffer = new CarOffer()
+                    {
+                        Author = userService.ReturnCurrentUser(),
+                        Brand = offer.Brand,
+                        Model = offer.Model,
+                        Description = offer.Description,
+                        Image = imgs,
+                        Color = offer.Color,
+                        Engine = offer.Engine,
+                        CreatedOn = DateTime.Now,
+                        Transmission = offer.Transmission,
+                        CarCategory = offer.CarCategory,
+                        Mileage = offer.Mileage,
+                        HorsePower = offer.HorsePower,
+                        Location = offer.Location,
+                        Price = offer.Price,
+                        SellersCurrentPhone = offer.SellersCurrentPhone,
+                        YearManufacured = offer.YearManufacured
+                    };
+
+                    this.carOffersService.Add(carOffer);
+
+                    return RedirectToAction("AllCars", "Offers");
                 }
-
-                var imgs = this.imageService.SaveImages(images);
-
-                //var mappedOffer= Mapper.Map<CarOfferViewModel, CarOffer>(offer);
-
-                var carOffer = new CarOffer()
-                {
-                    Author = userService.ReturnCurrentUser(),
-                    Brand = offer.Brand,
-                    Model = offer.Model,
-                    Description = offer.Description,
-                    Image = imgs,
-                    Color = offer.Color,
-                    Engine = offer.Engine,
-                    CreatedOn = DateTime.Now,
-                    Transmission = offer.Transmission,
-                    CarCategory = offer.CarCategory,
-                    Mileage = offer.Mileage,
-                    HorsePower = offer.HorsePower,
-                    Location = offer.Location,
-                    Price = offer.Price,
-                    SellersCurrentPhone = offer.SellersCurrentPhone,
-                    YearManufacured = offer.YearManufacured
-                };
-
-                this.carOffersService.Add(carOffer);
-
-                return RedirectToAction("AllCars", "Offers");
             }
 
             return View(); // make e default page if something is wrong
