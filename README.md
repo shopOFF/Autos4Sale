@@ -39,11 +39,11 @@ Your Web application should use the following technologies, frameworks and devel
 		* For example Kendo UI widgets (with the ASP.NET MVC Wrappers), Chart.js for charts, etc.
 	* ASP.NET WebForms is not allowed
 	* Use **sections** and **partial views**
-	* Use **editor** and/or **display** templates
+	* [x] Use **editor** and/or **display** templates
 * [x] Use **MS SQL Server** as database back-end
 	* [x] Use **Entity Framework 6** to access your database
 	* [x] Using **repositories and/or service layer** is a must
-* Use at least **1 area** in your project (e.g. for administration)
+* [x] Use at least **1 area** in your project (e.g. for administration)
 * Create **tables with data** with **server-side paging and sorting** for every model entity
 	* You can use Kendo UI grid, jqGrid, any other library or generate your own HTML tables
 * [x] Create **beautiful and responsive UI**
@@ -53,7 +53,7 @@ Your Web application should use the following technologies, frameworks and devel
 	* [x] Your registered users should have at least one of the two roles: **user** and **administrator**
 * Use **AJAX form and/or SignalR** communication in some parts of your application
 * Use **caching** of data where it makes sense (e.g. starting page)
-* Apply **error handling** and **data validation** to avoid crashes when invalid data is entered (both client-side and server-side)
+* [x] Apply **error handling** and **data validation** to avoid crashes when invalid data is entered (both client-side and server-side)
 * [x] Prevent yourself from **security** holes (XSS, XSRF, Parameter Tampering, etc.)
 	* [x] Handle correctly the **special HTML characters** and tags like `<script>`, `<br />`, etc.
 * Create **unit tests** for your "business" functionality following the best practices for writing unit tests (**at least 80% code coverage**) - **~30% of the points for the project** (**IF YOU HAVE UNDER 50% CODE COVERAGE YOU WILL NOT PASS THE EXAM**)
@@ -63,8 +63,8 @@ Your Web application should use the following technologies, frameworks and devel
 
 ### Mandatory Requirements
 
-- Implement at least 50% code coverage
-- Implement continuous integration
+- [x] Implement at least 50% code coverage
+- [x] Implement continuous integration
 
 ### Optional Requirements (bonus points)
 
