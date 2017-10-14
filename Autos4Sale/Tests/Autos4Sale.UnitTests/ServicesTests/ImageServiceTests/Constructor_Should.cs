@@ -14,7 +14,19 @@ namespace Autos4Sale.UnitTests.ServicesTests.ImageServiceTests
         public void Constructor_WhenInValidParametersArePased_ShouldThrowArgumentNullException()
         {
             //  Arrange, Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new ImageService(null));
+            Assert.Throws<ArgumentNullException>(() => new ImageService(null,"1"));
+        }
+
+        [TestCase]
+        public void Constructora_WhenInValidParametersArePased_ShouldThrowArgumentNullException()
+        {
+            //  Arrange
+            var efRepoMock = new Mock<IEfRepository<User>>();
+
+            var imgService = new ImageService(efRepoMock.Object,"2");
+            // Act & Assert
+
+            Assert.IsTrue(false);
         }
     }
 }

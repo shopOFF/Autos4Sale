@@ -15,8 +15,8 @@ namespace Autos4Sale.Services
     public class ImageService : IImageService
     {
         private readonly IEfRepository<User> usersRepo;
-        private readonly string currentUserId;
-        private readonly User currentUser; 
+        private string currentUserId;
+        private User currentUser;
 
         public ImageService(IEfRepository<User> usersRepo)
         {
@@ -26,14 +26,49 @@ namespace Autos4Sale.Services
             }
 
             this.usersRepo = usersRepo;
-            this.currentUserId= HttpContext.Current.User.Identity.GetUserId();
-            this.currentUser= this.usersRepo.GetAll.Where(x => x.Id == this.currentUserId).FirstOrDefault();
         }
 
-        private string RenameImage(int counter)
+        public string CurrentUserId
         {
-            return $"{currentUser.Email}-image-{counter}-{Guid.NewGuid()}.jpg";
+            get { return this.currentUserId; }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    this.currentUserId = HttpContext.Current.User.Identity.GetUserId();
+                }
+                else
+                {
+                    this.currentUserId = value;
+                }
+            }
         }
+
+        public User CurrentUser
+        {
+            get { return this.currentUser; }
+            private set
+            {
+                if (value == null)
+                {
+                    this.currentUser = this.usersRepo.GetAll.Where(x => x.Id == this.currentUserId).FirstOrDefault();
+                }
+                else
+                {
+                    this.currentUser = value;
+                }
+            }
+        }
+
+
+        public string RenameImage(int counter, string currUserId = null, User currUser = null)
+        {
+            this.CurrentUserId = currUserId;
+            this.CurrentUser = currUser;
+
+            return $"{this.currentUser.Email}-image-{counter}-{Guid.NewGuid()}.jpg";
+        }
+
         public ICollection<Image> SaveImages(IEnumerable<HttpPostedFileBase> images)
         {
             var counter = 1;
