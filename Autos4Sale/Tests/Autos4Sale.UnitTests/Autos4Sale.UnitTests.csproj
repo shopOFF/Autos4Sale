@@ -113,11 +113,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControllersTests\AccountControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\AdminAreaRegistration_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\AllOffers_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\DeleteOffer_Should.cs" />
     <Compile Include="ControllersTests\AdministrationOffersControllerTests\EditOffer_Should.cs" />
+    <Compile Include="ControllersTests\AdministrationOffersControllerTests\ManageUsers_Should.cs" />
     <Compile Include="ControllersTests\HomeControllerTests\About_Should.cs" />
     <Compile Include="ControllersTests\HomeControllerTests\Constructor_Should.cs" />
     <Compile Include="ControllersTests\HomeControllerTests\Contact_Should.cs" />
@@ -163,6 +165,7 @@
     <Compile Include="ViewModelsTests\AccountViewModelsTests\VerifyCodeViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\CarOfferViewModelTests\CarOfferViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\CarOfferViewModelTests\EditableCarOfferViewModel_Should.cs" />
+    <Compile Include="ViewModelsTests\CarOfferViewModelTests\UserViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\ManageViewModelsTests\AddPhoneNumberViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\ManageViewModelsTests\ChangePasswordViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\ManageViewModelsTests\ConfigureTwoFactorViewModel_Should.cs" />

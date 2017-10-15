@@ -80,7 +80,26 @@ namespace Autos4Sale.UnitTests.ControllersTests.OffersControllerTests
             // Act & Assert
             offersController.WithCallTo(x => x.AllCars()).ShouldRenderDefaultView();
             //offersController.WithCallTo(x => x.AllCars()).ShouldRenderDefaultView().WithModel<List<CarOfferViewModel>>();
+        }
 
+        [TestCase]
+        public void GetAllCars_WhenValidParametersArePased_ShouldReturnCorerectPartialViewResult()
+        {
+            // Arrange
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(typeof(OffersController).Assembly);
+
+            var carOffer = new CarOffer();
+            var userServiceMock = new Mock<IUserService>();
+
+            var carOffersServiceMock = new Mock<ICarOffersService>();
+            carOffersServiceMock.Setup(x => x.GetAll())
+                .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
+
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
+
+            //  Act & Assert
+            offersController.WithCallTo(x => x.GetAllCars()).ShouldRenderPartialView("_GetAllCarsPartial");
         }
     }
 }
