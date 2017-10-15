@@ -9,10 +9,16 @@ namespace Autos4Sale.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                      "~/Scripts/kendo/kendo.web.min.js",
+                      "~/Scripts/kendo/kendo.aspnetmvc.min.js",
+                      "~/Scripts/kendo/kendo.datepicker.min.js",
+                       "~/Scripts/kendo/kendo.grid.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -26,6 +32,10 @@ namespace Autos4Sale.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-sandstone.css",
                       "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo-css").Include(
+                     "~/Content/Kendo/kendo.common.min.css",
+                     "~/Content/Kendo/kendo.material.min.css"));
         }
     }
 }

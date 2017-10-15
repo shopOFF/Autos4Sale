@@ -9,16 +9,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 
 namespace Autos4Sale.Web.Areas.Administration.Controllers
 {
     public class OffersController : Controller
     {
         private readonly ICarOffersService carOffersService;
+        private readonly IUserService userService;
 
-        public OffersController(ICarOffersService carOffersService)
+        public OffersController(ICarOffersService carOffersService, IUserService userService)
         {
             this.carOffersService = carOffersService;
+            this.userService = userService;
         }
 
         [HttpGet]
@@ -104,6 +108,25 @@ namespace Autos4Sale.Web.Areas.Administration.Controllers
             this.carOffersService.Delete(carOfferToDelete);
 
             return RedirectToAction("AllOffers", "Offers");
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public ActionResult ManageUsers()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public ActionResult ManageUsers([DataSourceRequest]DataSourceRequest request)
+        {
+            var users = this.userService
+                .GetAllUsers()
+                .MapTo<UserViewModel>()
+                .ToDataSourceResult(request);
+ 
+            return this.Json(users);
         }
     }
 }

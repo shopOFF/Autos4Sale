@@ -27,13 +27,14 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
             var carOffer = new CarOffer();
             var guid = Guid.NewGuid();
 
+            var userServiceMock = new Mock<IUserService>();
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
 
             carOffersServiceMock.Setup(x => x.Delete(carOffer));
 
-            OffersController offersController = new OffersController(carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act
             carOffersServiceMock.Object.Delete(carOffer);
@@ -52,13 +53,14 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
             var carOffer = new CarOffer();
             var guid = Guid.NewGuid();
 
+            var userServiceMock = new Mock<IUserService>();
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
 
             carOffersServiceMock.Setup(x => x.Delete(carOffer));
 
-            OffersController offersController = new OffersController(carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act
             ViewResult result = offersController.DeleteOffer(guid) as ViewResult;

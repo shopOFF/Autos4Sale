@@ -23,12 +23,13 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
             autoMapperConfig.Execute(typeof(OffersController).Assembly);
 
             var carOffer = new CarOffer();
+            var userServiceMock = new Mock<IUserService>();
 
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
 
-            OffersController offersController = new OffersController(carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act
             ViewResult result = offersController.AllOffers() as ViewResult;
@@ -46,11 +47,12 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
 
             var carOffer = new CarOffer();
 
+            var userServiceMock = new Mock<IUserService>();
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
 
-            OffersController offersController = new OffersController(carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act & Assert
             offersController.WithCallTo(x => x.AllOffers()).ShouldRenderView("AllOffers");
@@ -65,11 +67,12 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
 
             var carOffer = new CarOffer();
 
+            var userServiceMock = new Mock<IUserService>();
             var carOffersServiceMock = new Mock<ICarOffersService>();
             carOffersServiceMock.Setup(x => x.GetAll())
                 .Returns(() => new List<CarOffer> { carOffer }.AsQueryable());
 
-            OffersController offersController = new OffersController(carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Act & Assert
             offersController.WithCallTo(x => x.AllOffers()).ShouldRenderDefaultView();

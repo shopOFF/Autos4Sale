@@ -1,5 +1,9 @@
-﻿@{
+﻿@using Kendo.Mvc.Extensions;
+@using Kendo.Mvc.UI;
+
+@{
     ViewBag.Title = "Home Page";
 }
-
 <h1>Home page</h1>
+
+@Html.Kendo().DatePicker().Name("dtpicker"))

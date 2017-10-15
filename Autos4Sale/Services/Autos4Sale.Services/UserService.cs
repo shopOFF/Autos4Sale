@@ -63,5 +63,10 @@ namespace Autos4Sale.Services
 
             return this.currentUser;
         }
+
+        public IQueryable<User> GetAllUsers()
+        {
+            return this.usersRepo.GetAll;
+        }
     }
 }

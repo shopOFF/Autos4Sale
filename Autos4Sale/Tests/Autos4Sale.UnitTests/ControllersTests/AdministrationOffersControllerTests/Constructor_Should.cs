@@ -13,9 +13,9 @@ namespace Autos4Sale.UnitTests.ControllersTests.AdministrationOffersControllerTe
         {
             // Arrange
             var carOffersServiceMock = new Mock<ICarOffersService>();
-
+            var userServiceMock = new Mock<IUserService>();
             // Act
-            OffersController offersController = new OffersController(carOffersServiceMock.Object);
+            OffersController offersController = new OffersController(carOffersServiceMock.Object, userServiceMock.Object);
 
             // Assert
             Assert.IsNotNull(offersController);

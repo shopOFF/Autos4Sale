@@ -1,0 +1,33 @@
+﻿@using Kendo.Mvc.Extensions;
+@using Kendo.Mvc.UI;
+
+@{
+    ViewBag.Title = "ManageUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ManageUsers</h2>
+
+@(Html.Kendo()
+        .Grid<Autos4Sale.Web.Areas.Administration.ViewModels.UserViewModel>()
+        .Name("user-grid")
+        .Columns(columns =>
+        {
+            columns.Bound(col => col.Id);
+            columns.Bound(col => col.Email);
+            columns.Bound(col => col.UserName);
+            columns.Bound(col => col.IsDeleted);
+        })
+        .ColumnMenu()
+        .Pageable()
+        .Sortable()
+        .Groupable()
+        .Filterable()
+        .DataSource(data =>
+        {
+            data
+            .Ajax()
+            .PageSize(5)
+            .Read(read => read.Action("ManageUsers", "Offers", new { area = "Administration" }));
+        }))
+
