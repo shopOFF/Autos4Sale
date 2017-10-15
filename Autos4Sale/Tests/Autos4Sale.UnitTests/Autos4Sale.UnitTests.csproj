@@ -146,6 +146,7 @@
     <Compile Include="ServicesTests\CarOffersServiceTests\Update_Should.cs" />
     <Compile Include="ServicesTests\EmailServiceTests\SendAsync_Should.cs" />
     <Compile Include="ServicesTests\ImageServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\ImageServiceTests\RenameImage_Should.cs" />
     <Compile Include="ServicesTests\ImageServiceTests\SaveImages_Should.cs" />
     <Compile Include="ServicesTests\SmsServiceTests\SendAsync_Should.cs" />
     <Compile Include="ServicesTests\UserServiceTests\Constructor_Should.cs" />

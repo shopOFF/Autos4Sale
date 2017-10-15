@@ -31,7 +31,7 @@ namespace Autos4Sale.Services
         public string CurrentUserId
         {
             get { return this.currentUserId; }
-            private set
+            set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -47,7 +47,7 @@ namespace Autos4Sale.Services
         public User CurrentUser
         {
             get { return this.currentUser; }
-            private set
+            set
             {
                 if (value == null)
                 {
@@ -69,7 +69,7 @@ namespace Autos4Sale.Services
             return $"{this.currentUser.Email}-image-{counter}-{Guid.NewGuid()}.jpg";
         }
 
-        public ICollection<Image> SaveImages(IEnumerable<HttpPostedFileBase> images)
+        public ICollection<Image> SaveImages(IEnumerable<HttpPostedFileBase> images = null)
         {
             var counter = 1;
             var collectionOfImages = new List<Image>();

@@ -7,5 +7,7 @@ namespace Autos4Sale.Services.Contracts
     public interface IImageService
     {
         ICollection<Image> SaveImages(IEnumerable<HttpPostedFileBase> images);
+
+        string RenameImage(int counter, string currUserId = null, User currUser = null);
     }
 }
