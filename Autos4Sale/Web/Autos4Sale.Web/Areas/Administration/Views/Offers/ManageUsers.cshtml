@@ -1,12 +1,11 @@
-﻿@using Kendo.Mvc.Extensions;
-@using Kendo.Mvc.UI;
+﻿@using Kendo.Mvc.UI;
 
 @{
     ViewBag.Title = "ManageUsers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ManageUsers</h2>
+<h2>Manage Users</h2>
 
 @(Html.Kendo()
         .Grid<Autos4Sale.Web.Areas.Administration.ViewModels.UserViewModel>()

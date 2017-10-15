@@ -257,19 +257,11 @@
     <Content Include="Content\Kendo\fonts\DejaVu\LICENSE.txt" />
     <Content Include="Content\Kendo\fonts\glyphs\KendoUIGlyphs.svg" />
     <Content Include="Content\Kendo\fonts\glyphs\WebComponentsIcons.svg" />
-    <Content Include="Content\Kendo\images\back.png" />
-    <Content Include="Content\Kendo\images\kendoui.svg" />
-    <Content Include="Content\Kendo\images\wp8_icons.png" />
-    <Content Include="Content\Kendo\images\wp8_inverseicons.png" />
-    <Content Include="Content\Kendo\kendo.common-bootstrap.core.min.css" />
-    <Content Include="Content\Kendo\kendo.common-bootstrap.min.css" />
     <Content Include="Content\Kendo\kendo.common-material.core.min.css" />
     <Content Include="Content\Kendo\kendo.common-material.min.css" />
     <Content Include="Content\Kendo\kendo.common.core.min.css" />
     <Content Include="Content\Kendo\kendo.common.min.css" />
     <Content Include="Content\Kendo\kendo.material.min.css" />
-    <Content Include="Content\Kendo\kendo.material.mobile.min.css" />
-    <Content Include="Content\Kendo\kendo.mobile.material.min.css" />
     <Content Include="Content\Kendo\Material\editor.png" />
     <Content Include="Content\Kendo\Material\imagebrowser.png" />
     <Content Include="Content\Kendo\Material\indeterminate.gif" />
@@ -325,19 +317,6 @@
     <Content Include="Areas\Administration\Views\Offers\EditOffer.cshtml" />
     <Content Include="Areas\Administration\Views\Offers\AllOffers.cshtml" />
     <Content Include="Areas\Administration\Views\Offers\_GetAllOffersPartial.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Currency.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Date.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Email.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Integer.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Number.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Password.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Time.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Content\Kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\Kendo\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\Kendo\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -357,17 +336,11 @@
     <Content Include="Content\Kendo\fonts\glyphs\WebComponentsIcons.eot" />
     <Content Include="Content\Kendo\fonts\glyphs\WebComponentsIcons.ttf" />
     <Content Include="Content\Kendo\fonts\glyphs\WebComponentsIcons.woff" />
-    <Content Include="Content\Kendo\images\kendoui.ttf" />
-    <Content Include="Content\Kendo\images\kendoui.woff" />
-    <Content Include="Content\Kendo\kendo.common-bootstrap.core.min.css.map" />
-    <Content Include="Content\Kendo\kendo.common-bootstrap.min.css.map" />
     <Content Include="Content\Kendo\kendo.common-material.core.min.css.map" />
     <Content Include="Content\Kendo\kendo.common-material.min.css.map" />
     <Content Include="Content\Kendo\kendo.common.core.min.css.map" />
     <Content Include="Content\Kendo\kendo.common.min.css.map" />
     <Content Include="Content\Kendo\kendo.material.min.css.map" />
-    <Content Include="Content\Kendo\kendo.material.mobile.min.css.map" />
-    <Content Include="Content\Kendo\kendo.mobile.material.min.css.map" />
     <Content Include="Areas\Administration\Views\Offers\ManageUsers.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -425,19 +398,6 @@
     <Content Include="Views\Offers\YourOffers.cshtml" />
     <Content Include="Views\Offers\EditOffer.cshtml" />
     <Content Include="Views\Offers\_GetAllCarsPartial.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Email.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Scripts\Kendo\kendo.grid.min.js.map" />
     <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js.map" />
     <Content Include="Scripts\Kendo\kendo.web.min.js.map" />
@@ -445,6 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

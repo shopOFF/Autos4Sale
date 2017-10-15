@@ -150,6 +150,7 @@
     <Compile Include="ServicesTests\ImageServiceTests\SaveImages_Should.cs" />
     <Compile Include="ServicesTests\SmsServiceTests\SendAsync_Should.cs" />
     <Compile Include="ServicesTests\UserServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\UserServiceTests\GetAllUsers_Should.cs" />
     <Compile Include="ServicesTests\UserServiceTests\ReturnCurrentUser_Should.cs" />
     <Compile Include="ViewModelsTests\AccountViewModelsTests\ExternalLoginConfirmationViewModel_Should.cs" />
     <Compile Include="ViewModelsTests\AccountViewModelsTests\ExternalLoginListViewModel_Should.cs" />

@@ -1,9 +1,10 @@
-﻿@using Kendo.Mvc.Extensions;
-@using Kendo.Mvc.UI;
-
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
-<h1>Home page</h1>
-
-@Html.Kendo().DatePicker().Name("dtpicker"))
+<div style="text-align:center">
+    <h1>Welcome to Autos4Sale</h1>
+    <h3>To View All Cars for Sale</h3>
+    <h4>Click on the Offers Tab</h4> or click
+    <h4>@Html.ActionLink("View All Available Offers", "AllCars", "Offers", new { area = string.Empty }, new { })</h4>
+    <img src="~/Images/wall.jpg" class="img-thumbnail"  id="head-img"/>
+</div>

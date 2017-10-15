@@ -54,8 +54,8 @@ footer {
     margin-left: 40px;
     padding-top: 0px;
 }
-.main-container{
-    width:1000px;
+.main-container {
+    width: 1000px;
 }
 .empty-space {
     margin-right:100px;
@@ -64,4 +64,11 @@ footer {
 #edit-btn{
     margin-top: -10px;
     margin-bottom:50px;
+}
+h1,h2{
+    text-align:center;
+}
+#head-img {
+    width: 800px;
+    height: 600px;
 }
